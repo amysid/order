@@ -1,0 +1,218 @@
+
+      <main class="mainContent homeMainContent">
+         <div class="container" style="padding-top:100px;">
+         <section class="changepassword-section" style="margin-top:10px;margin-bottom:50px;">
+            <div class="heading">
+               <h2>MY PROFILE</h2>
+            </div>
+          <div class="row">
+      
+          <div class="col-md-5 pt-4">
+              <div class="profile-section">
+          <div class="grey-bg">
+          <div class="profile-pic">
+          <img src="/assets/profile-pic.png">
+          </div>
+          <h5 class="pt-3">Stella Kara</h5>
+        <%#= form_with scope: @current_user, url:  update_profile_users_path , id: "edit_profile_users",multipart: true do |f| %>
+        <%= nested_form_for [:user, @current_user], url: update_profile_users_path, method: :post, html: {:multipart => true, id: "edit_profile_users"} do |f| %>
+          <div class="ID-proof d-flex align-items-center justify-content-between flex-wrap">
+          <label>Identification Type</label>
+          <span class="grey-text">National ID</span>
+          </div>
+            <%= f.fields_for :kyc_document do |m| %>
+              <div class="ID-image d-flex align-items-center justify-content-between">
+              <div class="front-ID">
+              <div class="ID-img">
+              <%= image_tag f.object.try(:kyc_document).try(:front_pic).try(:url),class: "sss",id: "front_pic",width: 173, height: 164 %>
+          <%#= image_tag @current_user.kyc_document.front_pic.url %>
+          <!-- <img src="/assets/aadhar-card.png"> -->
+              </div>
+              <p class="text-center purple" style="margin-top: 3px;">Front View</p>
+              <%= m.file_field :front_pic,id: "front",class: "upload"%>
+              </div>
+              <div class="front-ID">
+              <div class="ID-img">
+              <%= image_tag f.object.try(:kyc_document).try(:back_pic).try(:url), id: "back_pic",width: 173, height: 164 %>
+          <!-- <img src="/assets/aadhar-card.png"> -->
+              </div>
+              <p class="text-center purple" style="margin-top: 3px;">Back View</p>
+              <%= m.file_field :back_pic ,id: "back",class: "upload"%>
+              </div>
+              </div>
+              <% end %>
+          </div>
+          </div>
+          </div>
+
+
+                    <div class="col-md-7 pt-4">
+              <div class="profile-section">
+          <div class="grey-bg">
+      <!-- <form> -->
+           <div class="form-group grey ">
+             <!-- 
+             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username"> -->
+              <%= f.text_field :user_name, class: "form-control", placeholder: "Username","aria-describedby": "emailHelp",required: true,readonly: true %>
+
+           </div>
+           <div class="form-group grey ">
+          
+             <!-- <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Email"> -->
+              <%= f.text_field :email, class: "form-control", placeholder: "Email",required: true,readonly: true%>
+             
+           </div>
+           <div class="form-group grey ">
+          
+             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
+           </div>
+           <div class="form-group grey ">
+          
+             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Gender">
+           </div>
+           <div class="form-group grey ">
+          
+             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
+           </div>
+           <div class="form-group grey ">
+          
+             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
+           </div>
+           <div class="form-group grey ">
+          
+             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Mobile No.">
+           </div>
+           <div class="form-group grey ">
+          
+             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Identification No.">
+           </div>
+           <div class="row">
+           <div class="col-md-7">
+            <div class="form-group d-flex align-items-center justify-content-between grey ">
+          
+             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="DOB">
+             <img src="/assets/calendar.png" class="ml-3">
+           </div>
+           </div>
+                <div class="col-md-5 d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center justify-content-between w-100">
+          <div class="d-flex align-items-center justify-content-between w-100">
+          <div><span>Transcation Pin</span></div>
+                         <div class="toggle-group">
+                      <input type="checkbox" name="on-off-switch" id="on-off-switch" checked="" tabindex="1">
+                      <label for="on-off-switch">
+                          <span class="aural">Show:</span> 
+                      </label>
+                      <div class="onoffswitch pull-right" aria-hidden="true">
+                          <div class="onoffswitch-label">
+                              <div class="onoffswitch-inner"></div>
+                              <div class="onoffswitch-switch"></div>
+                          </div>
+                      </div>
+                  </div>
+</div>
+</div>
+
+           </div>
+           <div class="btn-block d-flex flex-wrap justify-content-around max-WT-450" style="margin: 0 auto">
+                      <!-- <button class="btn-purple2" name="">Save Changes</button> -->
+                      <%= f.submit "Save Changes",class: "btn-purple2" %>
+                      <a class="btn-purple" name="" data-toggle="modal" data-target="#dispute-take51">Change Password</a>
+                        <div class="modal fade common-modal reset-modal" id="dispute-take51" data-easein="whirlIn" tabindex="-1" role="dialog" aria-labelledby="costumModalLabel" aria-hidden="true" >
+     <div class="modal-dialog max-WT-450">
+        <div class="modal-content">
+          <div class="modal-header ">
+               
+                 <button type="button" class="close cross" data-dismiss="modal"><img src="/assets/cross.png"></button> 
+              </div>
+           <!-- Modal body -->
+           <div class="modal-body text-left">
+              <div class="row align-items-center modal_flax_height2">
+                 <div class="col">
+                    <div class="d-inline-block text-center modal-textarea w-100">
+                      <h4 class="text-left">Change Pin</h4>
+                      <!-- <form"> -->
+                          <div class="form-group grey">
+                            <input type="email" class="form-control" id="email" placeholder="Old Pin">
+                          </div>
+                           <div class="form-group grey">
+                            <input type="email" class="form-control" id="email" placeholder="New Pin">
+                          </div>
+                          <div class="form-group grey">
+                            <input type="email" class="form-control" id="email" placeholder="Confirm Pin">
+                          </div>
+                       
+                          
+                          
+                          
+                      <!-- </form> -->
+                      <button class="btn-purple max-WT-150" name="">Add Card</button>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+                      </div>
+           </div>
+        
+ <% end %>
+    <!-- </form> -->
+          </div>
+          </div>
+          </div>
+
+          </div>
+      </section>
+   </div>
+</main>
+
+
+<script type="text/javascript">
+  
+  
+
+
+   $(document).on('change', '.upload', function() {
+    var ext;
+    ext = $(this).val().split('.').pop().toLowerCase();
+
+    var preview = true;
+
+    console.log(this.files[0].size / 1024);
+    jpg_check = ext.indexOf("jpg")
+    jpeg_check = ext.indexOf("jpeg")
+    png_check = ext.indexOf("png")
+    
+
+    if (jpg_check === 0 || jpeg_check === 0 || png_check === 0 ){
+      console.log("111111")
+    }else{
+      console.log("22222222")
+
+      alertify.alert("Invalid format! Only jpeg, jpg, png and mp4/mpeg are allowed.").setHeader("");
+      $(this).val('');
+    }
+
+    if ((this.files[0].size / 1024) > (1024 * 3)) {
+      console.log("333333file size checking")
+      alertify.alert('Invalid size, Please choose image below 3 Mb!').setHeader("");
+      $(this).val('');
+    }
+    readURL(this);
+
+
+    function readURL(input){
+    if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      $("#"+input.id + "_pic").attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+  }
+
+  });
+</script>

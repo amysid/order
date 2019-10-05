@@ -1,0 +1,30 @@
+   <!-- Aside End -->
+   <%#= form_with scope: :user, url:  admin_path , method: :patch , id: "edit_client_registartion" do |f| %>
+    <%= nested_form_for @user , url: admin_path,method: :patch ,id: "edit_client_registration" do |f| %>
+    <div class="middle-content">
+      <div class="content-section ">
+    <!-- dashboard-filter Start -->
+     <div class="top-heading-block">
+        <div class="row">
+        <div class="col-md-12"><h1 class="page-title">Edit Client</h1></div>
+      </div>
+     </div>
+     <div class="profile-box max-WT-800">
+        <form class="edit-profile">
+      <%= render 'admin/form', f: f %>
+      <div class="mt30 button-block text-center">
+        <!-- <a href="Clientmanagement.html" class="btn btn-dark-blue btn-large">Add Client </a> -->
+        <%= f.submit "Edit Client", class: "btn btn-dark-blue btn-large" %>
+      </div>
+    </form>
+    </div>
+
+
+    </div>
+    <!-- content-section End -->
+    </div>
+    <%end%>
+
+
+         <!-- Footer Finish -->
+      <!-- Wrapper End -->

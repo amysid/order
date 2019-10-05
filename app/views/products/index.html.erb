@@ -1,0 +1,68 @@
+<body>
+   
+  <div class="wrapper">
+    <section class="custom-wrap">
+      <div class="container">
+        <div class="Dashboard-section">
+          
+
+          <div class="row mt-5 mb-5">
+            <div class="col-md-12">
+              <div class="">
+                <ul class="list-none d-flex j-space">
+                  <li>
+                    <p class="black-bold-color">Product Management</p>
+                  </li>
+                </ul>
+                <ul class="list-none d-flex right-data">
+               <li class="search-box">
+               	<a href="/products/new">
+               	<button class="green-btn-sqare create-btn-sqare">Create New Product</button>
+               </a>
+               </li>
+                  <li class="search-box">
+                    <input type="text" class="form-control " placeholder="Search">
+                  </li>
+                  
+                </ul>
+                <div class="table-responsive activity-table-scroll-big ">
+                  <table  class="table activity-table" id="sort">
+                    <thead>
+                      <tr class="table-fontsize">
+                        <th scope="col">id</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% @products.each_with_index do |product, i| %>
+                      <tr class="table-fontsize white-background">
+                        <td style="width: 5%"><%= i+1 %></td>
+                        <td style="width: 20%"><%= product&.name %></td>
+                        <td style="width: 30%"><img src="<%= product.image.url %>" alt=""></td>
+                        <td style="width: 40%"><%= product&.description %></td>
+                        <td style="width: 5%">active</td>
+                        <td>
+                          <div class="elips">
+                            <i class="fa fa-ellipsis-v doted "></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+            
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </section>
+
+  </div>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+</body>

@@ -1,0 +1,60 @@
+<div class="wrapper backgroundwrapper">
+    <section class="custom-wrap custom-middle">
+        <div class="container">
+            <div class=" middle-box">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="blue-box">
+                            <div class="mwaloni">
+                                <h4>Mwaloni</h4>
+                                <p>Intelligent Systems</p>
+                            </div>
+                            <div class="tree-img">
+                                <img src="assets/Layer 1.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- <div class="welcome-form "> -->
+                            <%= form_with scope: :user,url: sessions_register_path, id: "user_signup_form" do |f| %>
+                             <div class="form-group mt-5">
+                                <label for="exampleInputEmail1" class="gray-txt">Name</label>
+                                <%= f.text_field :name,class: "form-control form-input t-11" ,"aria-describedby": "emailHelp" ,placeholder: "Name" %>
+                            </div>
+                            <div class="form-group mt-5">
+                                <label for="exampleInputEmail1" class="gray-txt">Email</label>
+                                <%= f.text_field :email,class: "form-control form-input t-11" ,"aria-describedby": "emailHelp" ,placeholder: "Email Address" %>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" class="gray-txt">Password</label>
+                                <%= f.password_field :password,class: "form-control form-input t-11","aria-describedby": "emailHelp",placeholder: "Password" %>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" class="gray-txt">Confirm Password</label>
+                                <%= f.password_field :confirm_password,class: "form-control form-input t-11","aria-describedby": "emailHelp",placeholder: "Confirm Password" %>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" class="gray-txt">Select User Type</label>
+                                <select name="user[role]" class="form-control form-control2 select_opt">
+                                  <option value="Client" selected="">Client</option>
+                                  <option value="Agent">Agent</option>
+                              </select>
+                            </div>
+                            <ul class="button-forget-list mt-3">
+                                <li>
+                                    <%= f.submit "Sign up",class: "btn btn-primary signin-btn" %>
+                                </li>
+                                <li>
+                                    <span class="gray-txt">
+                                        <%= link_to 'Log in', login_path%>
+                                    </span>
+                                </li>
+                            </ul>
+                            <%end%>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

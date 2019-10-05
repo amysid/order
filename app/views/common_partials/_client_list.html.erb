@@ -1,0 +1,67 @@
+<div class="table-responsive activity-table-scroll-big ">
+    <table class="table activity-table" id="table">
+      <thead>
+        <tr class="table-fontsize">
+            <th scope="col"><select class="table-select ">
+                <option value="volvo">Client Id</option>
+              </select></th>
+            <th scope="col"><select class="table-select ">
+                  <option value="volvo">Client Name</option>
+                </select></th>
+                <th scope="col"><select class="table-select ">
+                    <option value="volvo">Users</option>
+                  </select></th>
+                  <th scope="col"><select class="table-select ">
+                      <option value="volvo">Admin</option>
+                    </select></th>
+                <th scope="col"><select class="table-select ">
+                    <option value="volvo">Email Address</option>
+                  </select></th>
+                  <th scope="col"><select class="table-select ">
+                      <option value="volvo">Current Balance</option>
+                    </select></th>
+                    <th scope="col"><select class="table-select ">
+                          <option value="volvo">Status</option>
+                        </select></th>
+
+        </tr>
+      </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+      <tr class="table-fontsize white-background">
+        <td><%=user.id%></td>
+        <td><%=user.client_name%></td>
+        <td>500</td>
+        <td><%=user.user.client_name%></td>
+        <td><%=user.email%></td>
+        <td><%=user.wallet.current_balance%></td>
+        <td><%= user.blocked == 1 ? "blocked" : "active" %></td>
+      </tr>
+      <%end%>
+    </tbody>
+
+    </table>
+  </div>
+<div class="d-flex align-items-center flex-wrap justify-content-between">
+   <div class="">
+      <p class="mb0">Showing <%= @pagy.from%> to <%=@pagy.to%> of <%= @pagy.count %> entries</p>
+   </div>
+
+    <div class="custom-pagination mt0 ">
+        <nav aria-label="Page navigation example ">
+            <ul class="pagination">
+                <li class="page-item">
+                  <%#== pagy_nav(@pagy) %>
+                  <%== pagy_bootstrap_nav(@pagy) %>
+                  <%#== pagy_bootstrap_nav_js(@pagy) %>
+
+                   <%#= will_paginate @users  %>
+
+
+
+                </li>
+            </ul>
+        </nav>
+    </div>
+  </div>

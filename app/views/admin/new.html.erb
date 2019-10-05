@@ -1,0 +1,27 @@
+<div>
+<%= nested_form_for @user , url: admin_index_path, id: "client_registration_form" do |f| %>
+<div class="middle-content">
+  <div class="content-section ">
+<!-- dashboard-filter Start -->
+ <div class="top-heading-block">
+    <div class="row">
+    <div class="col-md-12"><h1 class="page-title">Add Client</h1></div>
+  </div>
+ </div>
+ <div class="profile-box max-WT-800">
+    <form class="edit-profile">
+  <%= render 'admin/form', f: f %>
+  <div class="mt30 button-block text-center">
+    <!-- <a href="Clientmanagement.html" class="btn btn-dark-blue btn-large">Add Client </a> -->
+    <%= f.submit "Add Client", class: "btn btn-dark-blue btn-large" %>
+  </div>
+</form>
+</div>
+
+
+</div>
+<!-- content-section End -->
+</div>
+
+<%end%>
+</div>

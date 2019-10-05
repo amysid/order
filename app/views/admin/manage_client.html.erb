@@ -1,0 +1,63 @@
+<div class="middle-content">
+<div class="content-section">
+<%= form_with scope: :user,url: balance_update_admin_index_path(@user), local: true do |form| %>
+ 
+ 
+  <%#= form.select(:id, User.all.collect {|u| [u.user_name, u.id]}, :prompt => 'Select', {}, { :class => "abc" })%>
+  <%= form.select(:id,User.all.collect{|u|[u.user_name,u.id]} , {}, { :class => "abc" } ) %>
+
+<p>
+    <%= form.label :Current_blance %><br></p>
+   <div class="abc1"><%= @wallet&.current_balance%></div>
+
+ 
+ <p>
+    <%= form.label :Enter_top_up_blance %><br>
+    <%= form.text_field :top_up %>
+  </p>
+
+  <p>
+    <%= button_tag "Update" %>
+  </p>
+ 
+<% end %>
+ </div>
+</div>
+<%# link_to 'Back', articles_path %>
+
+<script>
+ 
+  $('.abc').change(function(){
+      var id = this.value;
+        $.ajax({
+            url: '/admin/manage_client',
+            type: 'get',
+            data: {
+                data: id,
+                only: "data"
+            },
+            success: function(data) {
+               debugger;
+               $('.abc1').text(data['current_balance']);
+            }
+        });
+    });
+
+
+  // $('.submit').click(function(e){
+  //       e.preventDefault();
+  //     var id = this.value;
+  //       $.ajax({
+  //           url: '/admin/balance_update',
+  //           type: 'post',
+  //            data: {
+  //           //     data: id,
+  //                only: "data"
+  //           },
+  //           success: function(data) {
+  //              debugger;
+              
+  //           }
+  //       });
+  //   });
+</script>

@@ -1,0 +1,104 @@
+<html lang="en">
+   <head>
+
+      <title></title>
+       <%= csrf_meta_tags %>
+       <%= csp_meta_tag %>
+       <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+   </head>
+<!-- <header> -->
+  <div class="navigarigtion-bar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light header-dashboard">
+      <a class="navbar-brand header-img" href="#"><img src="/assets/blacktree.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <% if params[:action]!="index"%>
+          <li class="nav-item active">
+            <% if params[:controller]=="admin" %>
+            <a class="nav-link nblue-txt" href="/admin">Dashboard<span class="sr-only"></span></a>
+            <% elsif params[:controller]=="client" %>
+            <a class="nav-link nblue-txt" href="/client">Dashboard<span class="sr-only"></span></a>
+            <% elsif params[:controller]=="employee" %>
+            <a class="nav-link nblue-txt" href="/client">Dashboard<span class="sr-only"></span></a>
+            <% end %>
+          </li>
+          <%else%>
+          <li class="nav-item active">
+            <a class="nav-link gray-txt" href="#">Dashboard<span class="sr-only"></span></a>
+          </li>
+          <%end%>
+          <% if params[:action]=="transaction"%>
+          <li class="nav-item">
+            <a class="nav-link nblue-txt" href="#">Transactions</a>
+          </li>
+          <%else%>
+          <li class="nav-item">
+            <a class="nav-link gray-txt" href="#">Transactions</a>
+          </li>
+          <%end%>
+          <% if params[:controller]=="admin"%>
+            <% if params[:action]=="client_management"%>
+              <li class="nav-item">
+                <a class="nav-link nblue-txt" href="/admin/client_management">Clients</a>
+              </li>
+            <%else%>
+            <li class="nav-item">
+              <a class="nav-link gray-txt" href="/admin/client_management">Clients</a>
+            </li>
+           <% end %>
+          <% end %>
+          <% if params[:action]=="airtime"%>
+          <li class="nav-item">
+            <a class="nav-link nblue-txt" href="#">Airtime and Bills</a>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <a class="nav-link gray-txt" href="#">Airtime and Bills</a>
+          </li>
+          <% end %>
+          <% if params[:controller]=="client" %>
+          <li class="nav-item">
+            <a class="nav-link disabled gray-txt" href="#" tabindex="-1" aria-disabled="true">Transfer Funds</a>
+          </li>
+          <% end %>
+          <% if params[:controller]=="employee"%>
+          <li class="nav-item">
+            <a class="nav-link disabled gray-txt" href="#" tabindex="-1" aria-disabled="true">Department</a>
+          </li>
+          <% end %>
+          <% if params[:controller]== "client"%>
+          <li class="nav-item">
+            <a class="nav-link disabled gray-txt" href="#" tabindex="-1" aria-disabled="true">Employee</a>
+          </li>
+          <% end %>
+          <% if params[:controller]== "client" %>
+          <li class="nav-item">
+            <a class="nav-link disabled gray-txt" href="#" tabindex="-1" aria-disabled="true">Payroll</a>
+          </li>
+          <% end %>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <ul class="welcome-kanera">
+            <li>
+              <p class="gray-txt mb-0">Welcome</p>
+              <p class="welcome-kanera">Kenra Company</p>
+            </li>
+            <li class="header-img">
+              <img src="/assets/bag.png">
+            </li>
+          </ul>
+
+        </form>
+      </div>
+    </nav>
+  </div>
+  <!-- </header> -->
+  <%= yield %>
+  </html>

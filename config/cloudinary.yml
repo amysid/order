@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: ikeshavgiri
+  api_key: '648546525971327'
+  api_secret: cOlhlN76axVkXTWSA-eGZYZGtdM
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: ikeshavgiri
+  api_key: '648546525971327'
+  api_secret: cOlhlN76axVkXTWSA-eGZYZGtdM
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: ikeshavgiri
+  api_key: '648546525971327'
+  api_secret: cOlhlN76axVkXTWSA-eGZYZGtdM
+  enhance_image_tag: true
+  static_file_support: false

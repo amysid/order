@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Digital Wallet</title>
+    <%#= javascript_include_tag 'users', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track': 'reload' %>
+   <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+</head>
+<body class="notLogged">
+    <%= alertify_flash %>
+<% if session[:user_id].present? %>
+  <header class="header1 headerbg">
+         <div class="container1440">
+            <nav class="d-flex w-100 align-items-center justify-content-between">
+               <div class="logo">
+                  <a href="/users">
+                    <!--  <span class="web-view-logo"><img src="/assets/logo.png" alt="Logo"/></span> -->
+                     <span class="mob-view-logo"><img src="/assets/logo5.png" alt="Logo"/></span>
+                  </a>
+               </div>
+               <div class="menu " id="menubox">
+                  <span class="close-menu" id="menuClose"></span>
+                  <ul class="onHoverDropdown dropDownStyle nav-menu-list">
+                     <li class="dropdown"><a href="javascript:void(0);">Plans & Pricing</a></li>
+                     <li class="dropdown"><a href="javascript:void(0);">How it Works</a></li>
+                     <li class="dropdown"><a href="javascript:void(0);">Support</a></li>
+                  </ul>
+               </div>
+               <div class="loginBox">
+                  <a href="/users/my_profile" class="btn btnHeader">My Profile</a>
+                  
+                  <a href="/logout" class="btn btnHeader"><img src="/assets/loginicon.png" alt="icon"/>Logout</a>
+                  <!-- <a href="signup.html" class="btn btnHeader">Sign up</a> -->
+               </div>
+               <a href="javascript:;" class="mob-menu" id="menuShow">
+               <span class="menu-bar"></span>
+               </a>
+            </nav>
+         </div>
+      </header>
+      <% end %>
+
+  <%= yield %>
+
+<% if session[:user_id].present? %>
+
+           <footer>
+         <div class="container1440">
+            <div class="row">
+               <div class="col-lg-4 col-md-3 footOrder1">
+                  <div class="max-WT-350">
+                     <div class="logo mobW100 mobTextCenter">
+                        <a href="javascript:void(0);">
+                        <span class="web-view-logo"><img src="/assets/logo.png" alt="Logo"/>
+                        </a>
+                     </div>
+                   
+                     <ul class="socialLinks mt30">
+                   <li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="javascript:void(0)"><i class="fab fa-google-plus-g"></i></a></li>
+                    </ul>
+                  </div>
+               </div>
+               <div class="col-lg-2 col-md-3 footOrder2">
+                  <div class="addressBox">
+                     <ul class="footerMenu mb0">
+                        <li><a href="about-us.html">About</a></li>
+                        <li><a href="javascript:void(0);">Company</a></li>
+                        <li><a href="javascript:void(0);">Press</a></li>
+                        <li><a href="javascript:void(0);">Careers</a></li>
+                        <li><a href="javascript:void(0);">Leadership</a></li>
+                  <li><a href="javascript:void(0);">Help</a></li>
+                        <li><a href="javascript:void(0);">Security</a></li>
+                     </ul>
+            </div>
+               </div>
+               <div class="col-lg-3 col-md-3 footOrder3">
+                  <div class="addressBox">
+                     
+                     <ul class="footerMenu mb0">
+                        <li><a href="javascript:void(0);">Features</a></li>
+                        <li><a href="javascript:void(0);">Track Miles</a></li>
+                        <li><a href="javascript:void(0);">Track Income & Expenses</a></li>
+                        <li><a href="javascript:void(0);">Maximize Tax Deductions</a></li>
+                        <li><a href="javascript:void(0);">Invoice & Accept Payments</a></li>
+                  <li><a href="javascript:void(0);">Run Reports</a></li>
+                        <li><a href="javascript:void(0);">Send Estimates</a></li>
+                     </ul>
+                
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-3 footOrder4">
+                  <div class="addressBox mb15">
+                     <ul class="footerMenu mb0">
+                        <li><a href="javascript:void(0);">Resources</a></li>
+                        <li><a href="javascript:void(0);">Resource Center</a></li>
+                        <li><a href="javascript:void(0);">Product Support</a></li>
+                        <li><a href="javascript:void(0);">Tutorials</a></li>
+                        <li><a href="javascript:void(0);">Blog</a></li>
+                  <li><a href="javascript:void(0);">Currency Converter</a></li>
+                        <li><a href="javascript:void(0);">Product License Agreement</a></li>
+                     </ul>
+                </div>
+               </div>
+              
+            </div>
+            <p class="copyRight">© 2018 digitalwallet. All rights reserved.</p>
+         </div>
+      </footer>
+      <% end %>
+</body>
+</html>

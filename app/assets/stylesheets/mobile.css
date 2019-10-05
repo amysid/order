@@ -1,0 +1,81 @@
+@media (max-width: 1024px)
+{
+.white-card {
+    padding: 0px 7px;
+    max-height: 244px;
+}
+.big-white-card {
+    max-height: 418px;
+}
+.activity-table-scroll {
+    max-height: 341px;
+}
+.send-border {
+    max-width: 208px;
+}
+.green-btn {
+    font-size: 13px;
+    
+}
+}
+@media (max-width: 768px)
+{
+.white-card {
+    padding: 10px 7px;
+    margin-bottom: 82px;
+}
+.send-border {
+    max-width: 327px;
+}
+}
+@media (max-width: 767px)
+{
+    .big-white-card {
+        max-height: 418px;
+        margin-bottom: 54px;
+    }
+    .send-border {
+        max-width: 393px;
+    }
+    .welcome-form {
+        padding-top: 53px;
+        padding-bottom: 57px;
+        padding-right: 8px;
+        padding-left: 20px;
+    }
+    .green-btn {
+        width: 100%;
+        max-width: 208px;
+    }
+    .red-btn {
+        width: 100%;
+        max-width: 208px;
+    }
+    .blue-btn {
+        width: 100%;
+        max-width: 208px;
+    }
+    .blue-box {
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+    }
+    .tree-img img {
+        bottom: 27px;
+    }
+    .verification-form {
+        padding-left: 20px;
+    }
+    .button-forget-list {
+        display: block;
+    }
+    .signin-btn {
+        margin-bottom: 17px;
+    }
+    .tree-img img {
+        max-width: 81px;
+    }
+    .mwaloni {
+        padding-left: 15px;
+        padding-bottom: 16px;
+    }
+}

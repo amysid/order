@@ -1,0 +1,77 @@
+          <div class="middle-content">
+            <div class="content-section">
+          <!-- dashboard-filter Start -->
+           <div class="top-heading-block">
+              <div class="row">
+              <div class="col-md-12"><h1 class="page-title">Add Employee</h1></div>
+            </div>
+           </div>
+           <div class="profile-box max-WT-800">
+                <%= form_with scope: :user, url: create_employee_client_admins_path,method: :post, id: "admin_client_registration_form",class: "edit-profile" do |f| %>
+               <div class="center-box max-WT-500">
+                 <div class="row form-group">
+                    <label class="control-label col-md-4">Employee Name</label>
+                    <div class="col-md-8">
+                    
+                     <%= f.text_field :client_name, class: "form-control",placeholder: "Shikha Singh" %>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="control-label col-md-4">User Name</label>
+                    <div class="col-md-8">
+                    
+                     <%= f.text_field :user_name, class: "form-control",placeholder: "ShikhaSH" %>
+
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="control-label col-md-4">Email</label>
+                    <div class="col-md-8">
+                    
+                     <%= f.text_field :email, class: "form-control",placeholder: "shikha@outlook.com" %>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="control-label col-md-4">Department</label>
+                    <div class="col-md-8">
+                    <select name="" class="form-control form-control2 select_opt">
+                      <option value="" selected="">Dept 3</option>
+                      <option value="">Dept 2</option>
+                      <option value="">Dept 1</option>
+                  </select>
+                    </div>
+                  </div>
+                    <div class="row form-group">
+                    <label class="control-label col-md-4">Base Salary</label>
+                    <div class="col-md-8">
+                     <%= f.text_field :base_salary, class: "form-control",placeholder: "00.00" %>
+                    </div>
+                  </div> 
+                  <div class="row form-group">
+                    <label class="control-label col-md-4">Create Password</label>
+                    <div class="col-md-8">
+                    
+                     <%= f.password_field :password, class: "form-control",placeholder: "*************" %>
+                    </div>
+                  </div>  
+                  <div class="row form-group">
+                    <label class="control-label col-md-4">Confirm Password</label>
+                    <div class="col-md-8">
+                    
+                     <%= f.password_field :confirm_password, class: "form-control",placeholder: "*************" %>
+                    </div>
+                  </div>   
+              <div class="mt30 button-block text-center">
+                <%= f.submit "Add Employee",class: "btn btn-dark-blue btn-large" %>
+              </div>
+              </div>
+              <% end %>
+          </div>
+
+            
+         </div>
+            <!-- content-section End -->
+         </div>
+
+
+

@@ -1,0 +1,18 @@
+
+    <Table>
+      <tr>
+           <th>ID</th>
+           <th>Status</th>  
+            <th>Beneficiary</th>
+           <th>create_at</th>
+      </tr>
+    <% @transactions.each do |transaction| %>
+    <%# binding.pry%>
+      <tr>
+        <td><%= transaction.id %></td>
+        <td><%= transaction.status %> </td>
+        <td><%= transaction.beneficiary%></td>
+        <td><%= transaction.created_at %></td>
+      </tr>
+    <% end %>
+    </Table>

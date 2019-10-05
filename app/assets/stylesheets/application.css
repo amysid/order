@@ -1,0 +1,259 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require alertify
+ *= require alertify/default
+ *= require alertify/bootstrap
+ *= require bootstrap-datetimepicker
+ *= require jquery-ui
+ *= require_tree .
+ * stub ./web/style
+ *= require_self
+ */
+/*
+ .header-img img{
+     height: 100%;
+     max-height: 30px;
+     width: 100%;
+     max-width: 36px;
+ }
+ .welcome-kanera {
+     list-style: none;
+     padding-left: 0px;
+     display: flex;
+     min-width: 125px;
+     margin-bottom: 0px;
+     color: #617381;
+     justify-content: space-between;
+ }
+ .nblue-txt {
+     font-size: 14px;
+     color: #4277bc !important;
+     font-weight: normal;
+ }
+ .bg-light.header-dashboard {
+     background-color: #fff !important;
+     border-bottom: 1px solid #ccc;
+ }
+ .white-card {
+     border: 1px solid #ddd;
+     background: #fff;
+     padding: 10px 27px;
+     border-radius: 5px;
+     height: 100%;
+     max-height: 204px;
+ }
+ /* .dashboard-wrap {
+     height: 100vh;
+ } *\/
+ .black-heading h4 {
+     font-size: 18px;
+     padding: 30px 0;
+ }
+ .list-none {
+     list-style: none;
+     padding-left: 0px;
+ }
+ .d-flex {
+     display: flex;
+ }
+ .green-btn {
+     width: 100%;
+     background: rgb(109, 192, 102);
+     border: none;
+     color: #fff;
+     font-size: 14px;
+     border-radius: 24px;
+     padding: 5px 0;
+     text-align: left;
+     font-weight: 400;
+     padding-left: 8px;
+     margin-top: 10px;
+ }
+ .large-green-btn {
+     width: 100%;
+     background: rgb(109, 192, 102);
+     border: none;
+     color: #fff;
+     font-size: 14px;
+     border-radius: 2px;
+     padding: 5px 0;
+     text-align: left;
+     font-weight: 400;
+     padding-left: 40px;
+     padding-right: 40px;
+     margin-top: 10px;
+ }
+ .red-btn {
+     width: 100%;
+     background: rgb(240, 98, 107);
+     border: none;
+     color: #fff;
+     font-size: 14px;
+     border-radius: 24px;
+     padding: 5px 0;
+     text-align: left;
+     font-weight: 400;
+     padding-left: 8px;
+ }
+ .blue-btn {
+     width: 100%;
+     background: rgb(66, 119, 188);
+     border: none;
+     color: #fff;
+     font-size: 14px;
+     border-radius: 24px;
+     padding: 5px 0;
+     text-align: left;
+     font-weight: 400;
+     padding-left: 8px;
+ }
+ .arrow-btn {
+     width: 100%;
+     text-align: right;
+     max-width: 87px;
+     font-size: 14px;
+ }
+ .send-border {
+     border: 1px solid #ddd;
+     width: 100%;
+     position: absolute;
+     left: 16px;
+     max-width: 256px;
+ }
+ .graph-img img{
+     width: 100%;
+ }
+ .weekly-drop {
+     background: #fff;
+     border: 1px solid #989fa3;
+     color: #a1a6aa;
+     height: 100%;
+     max-height: 32px;
+ }
+ .j-space {
+     justify-content: space-between;
+ }
+ .big-white-card {
+     background: #fff;
+     padding: 16px 17px;
+     border: 1px solid #ddd;
+     border-radius: 5px;
+     height: 100%;
+     max-height: 475px;
+ }
+ .btn-secondary.drop-btn:not(:disabled):not(.disabled):active, .btn-secondary.drop-btn:not(:disabled):not(.disabled).active, .show > .btn-secondary.drop-btn.dropdown-toggle {
+     color: #212529;
+     background-color: #ffffff;
+     border-color: #4e555b;
+ }
+ .btn-secondary.drop-btn:hover {
+     color: #545b62;
+     background-color: #ffffff;
+     border-color: #545b62;
+ }
+ .blue-color {
+     color: #4277bc !important;
+ }
+ .subheading {
+     font-size: 20px;
+ }
+ .gray-color {
+     color: rgb(97, 115, 129) !important;
+ }
+ .arrow-green {
+     width: 100%;
+     max-width: 46px;
+     padding-right: 7px;
+     padding-left: 10px;
+ }
+ .expenditure-list {
+     justify-content: space-between;
+     width: 100%;
+     max-width: 361px;
+ }
+ .dropdown-menu.cdrop-menu.show {
+     background: #000;
+     color: #fff;
+     width: 100%;
+     min-width: 21px;
+ }
+ .dropdown-item.cdrop-item {
+     color: #ffffff;
+ }
+ .dropdown-item.cdrop-item:hover, .dropdown-item.cdrop-item:focus  {
+     color: #fff;
+     text-decoration: none;
+     background-color: rgb(84, 95, 101);
+ }
+ .dropdown-item.cdrop-item.active, .dropdown-item.cdrop-item.active {
+     color: #fff;
+     text-decoration: none;
+     background-color: rgb(84, 95, 101);
+ }
+
+ .table-fontsize {
+     font-size: 13px;
+     white-space: nowrap;
+     color: rgb(97, 115, 129);
+ }
+ .table.activity-table td {
+     border-top: 1px solid rgb(200, 206, 210);
+     border-bottom: 1px solid rgb(200, 206, 210);
+     text-align: center;
+     padding: 0.75rem;
+     text-align: start;
+     vertical-align: top;
+ }
+ .table.activity-table {
+     border-collapse: collapse;
+     border-collapse: separate;
+     border-spacing: 0 9px;
+ }
+ .table.activity-table tr td:first-child {
+     border-top-left-radius: 8px;
+     border-left: 1px solid rgb(200, 206, 210);
+     border-bottom-left-radius: 8px;
+ }
+ .table.activity-table tr td:last-child {
+     border-right: 1px solid rgb(200, 206, 210);
+     border-bottom-right-radius: 8px;
+     border-top-right-radius: 8px;
+ }
+ .table.activity-table thead th {
+     vertical-align: bottom;
+     border-bottom: none;
+     border-top: none;
+     font-weight: 400;
+     color: rgb(145, 160, 169);
+ }
+ button.green-table-btn {
+     background: rgb(109, 192, 102);
+     border: none;
+     border-radius: 6px;
+     color: #fff;
+     padding: 4px 15px;
+     max-width: 93px;
+ }
+ button.red-table-btn {
+     background: rgb(240, 98, 107);
+     border: none;
+     border-radius: 6px;
+     color: #fff;
+     padding: 4px 15px;
+     width: 100%;
+     max-width: 93px;
+ }
+ .activity-table-scroll {
+     height: 100%;
+     max-height: 386px;
+ } */

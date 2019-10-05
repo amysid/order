@@ -1,0 +1,167 @@
+
+<html lang="en">
+   <head>
+    <!--   <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,width=device-width,user-scalable=no">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      <meta name="description" content="">
+      <meta name="author" content=""> -->
+      <title></title>
+       <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <!--  <link href="/assets/bootstrap.min.css" rel="stylesheet">
+      <link href="/assets/stylesheet.css" rel="stylesheet">
+	  <link href="/assets/datepicker.css" rel="stylesheet">
+      <link href="/assets/style.css" rel="stylesheet">
+      <link href="/assets/mobile.css" rel="stylesheet"> -->
+   </head>
+   <body class="afterlogin">
+   <%= alertify_flash %>
+      <div class="wrapper">
+         <header class="header">
+            <nav class="navbar clearfix">
+           
+               <div class="nav-right-box">
+                   <span class="nav-toggle-span">
+               <button class="btn btn-toggle" type="button">
+               <i class="fas fa-bars"></i>
+               </button>
+               </span>
+                  <div class="head_user-box clearfix dropdown">
+                     <div class="head_user_name clearfix">
+                        <div class="top-user-img f-right d-flex align-items-center">
+                            <a class="side_menu"  href="/my_profile"><img src="/assets/user1.png" alt="User Image"/></a>
+                           <img src="/assets/wallet1.png" alt="User Image"/>
+                           <a class="side_menu" href="#logout" data-toggle="modal" data-target="#logout">
+                           <img src="/assets/logout1.png" alt="User Image"/></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </header>
+            <!-- Header End -->
+      <aside class="sidebar">
+        <span class="close_panel"><i class="fas fa-times"></i></span>
+           
+            <div class="sidebar-scroller">
+               <!--Accordion Start -->
+               <div class="loginuser-block">
+                <div class="dropdownimg">
+                  <img src="/assets/dropd.png">
+                </div>
+                  <div class="loginuser-img">
+                     <img src="/assets/usericon.png">
+                     <i class="fa fa-circle"></i>
+                  </div>
+                  <label style="display: block!important;">Welcome</label>
+                  <h5>Josh Hazlewood</h5>
+                  <label>abc@gmail.com</label>
+              </div>
+               <div id="accordion" class="sidebar-menu">
+         
+          <!-- menu-box Start -->
+           <div class="menu-box active">
+                     <div class="card-header clearfix" id="headingOne">
+                        <a class="side_menu" href="/admin">
+                        <span class="side_menu_icon"><img src="/assets/dashboard.png" alt="Icon"/></span><span>Dashboard</span>
+                        </a>
+                    </div>
+                  </div>
+          <!-- menu-box End -->
+          
+          <!-- menu-box Start -->
+          <div class="menu-box toggle-menu">
+                     <div class="card-header clearfix" id="headingOne">
+                        <a class="side_menu"  href="/admin/client_management">
+                        <span class="side_menu_icon"><img src="/assets/client.png" alt="Icon"/></span>Client Management
+                        </a>
+                     </div>
+                 
+                  </div>
+          <!-- menu-box End -->
+           
+           <!-- menu-box Start -->
+            <div class="menu-box">
+                     <div class="card-header clearfix" id="headingOne">
+                        <a class="side_menu" href="/utility_payments">
+                        <span class="side_menu_icon"><img src="/assets/credit-card.png" alt="Icon"/></span><span>Utility Payments</span>
+                        </a>
+                    </div>
+                  </div>
+          <!-- menu-box End -->
+
+          <!--  Transaction  -->
+          <div class="menu-box">
+                     <div class="card-header clearfix" id="headingOne">
+                        <a class="side_menu" href="/transactions">
+                        <span class="side_menu_icon"><img src="/assets/credit-card.png" alt="Icon"/></span><span>Transaction</span>
+                        </a>
+                    </div>
+                  </div>
+          <!-- end transaction -->
+
+          <!-- Airtime && Bills -->
+          <div class="menu-box">
+                     <div class="card-header clearfix" id="headingOne">
+                        <a class="side_menu" href="/airtimes">
+                        <span class="side_menu_icon"><img src="/assets/credit-card.png" alt="Icon"/></span><span>Airtime and Bill</span>
+                        </a>
+                    </div>
+                  </div>
+          <!--  -->
+
+               <div class="menu-box">
+                     <div class="card-header clearfix" id="headingOne">
+                         <a class="side_menu" href="AddCommission.html">
+                        <span class="side_menu_icon"><img src="/assets/setting.png" alt="Icon"/></span><span>Settings</span>
+                        </a>
+                    </div>
+                  </div>
+              <!-- menu-box End -->
+              <!-- menu-box Start -->
+               <div class="menu-box">
+                     <div class="card-header clearfix" id="headingOne">
+                         <a class="side_menu" href="#logout" data-toggle="modal" data-target="#logout">
+                        <span class="side_menu_icon"><img src="/assets/logout.png" alt="Icon"/></span><span>Logout</span>
+                        </a>
+                    </div>
+                  </div>
+              <!-- menu-box End -->
+               </div>
+               <!--Accordion End -->
+            </div>
+         </aside>
+         
+    <%= yield %>
+      <div id="logout" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              
+              <h4 class="modal-title">Logout</h4><button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+              <p id="fee-info">Are you sure you want to logout?</p>
+            </div>
+            <div class="modal-footer">
+              <a href="/logout" class="btn  btn-dark-blue max-WT-150">Yes</a>
+              <button type="submit" class="btn btn-blue max-WT-150" data-dismiss="modal">No</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+          <footer>
+            <div class="text-center">
+               Copyright @ 2018. All rights are reserved.
+            </div>
+          </footer>
+              </body>
+</html>

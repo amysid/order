@@ -1,0 +1,154 @@
+  <div class="wrapper">
+    <section class="custom-wrap">
+      <div class="container">
+        <div class="Dashboard-section">
+          <div class="black-heading">
+            <h4>Department</h4>
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt mb-5">
+                  Current Balance
+                </p>
+                <ul class="list-none d-flex">
+                  <li class="gray-txt">ksh</li>
+                  <li>
+                    <h2 class="subheading-big">4,040,055</h2>
+                  </li>
+                </ul>
+                <div class="mb-3">
+                  <button class="green-btn">
+                    Fund Wallet<i class="fa fa-arrow-right arrow-btn "></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt mb-5">
+                 Allocated Balance
+                </p>
+                <ul class="list-none d-flex">
+                  <li class="gray-txt">ksh</li>
+                  <li>
+                    <h2 class="subheading-big">3,000,000</h2>
+                  </li>
+                </ul>
+           
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="white-card">
+                    <p class="gray-txt mb-5">
+                     Unallocated Balance
+                    </p>
+                    <ul class="list-none d-flex">
+                      <li class="gray-txt">ksh</li>
+                      <li>
+                        <h2 class="subheading-big">1,040,055</h2>
+                      </li>
+                    </ul>
+               
+                  </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="white-card">
+                    <p class="gray-txt mb-5">
+              Department
+                    </p>
+                    <ul class="list-none d-flex">
+                      <li class="gray-txt">ksh</li>
+                      <li>
+                        <h2 class="subheading-big">9</h2>
+                      </li>
+                    </ul>
+               
+                  </div>
+            </div>
+          </div>
+          <div class="row mt-5 mb-5">
+            <div class="col-md-12">
+              <div class="">
+                <ul class="list-none d-flex j-space">
+                  <li>
+                    <p class="black-bold-color">Department Management</p>
+                  </li>
+                </ul>
+                <ul class="list-none d-flex right-data">
+                <li class="search-box">
+                  <%= link_to "Create New Department", manage_department_client_admins_path, class: "green-btn-sqare create-btn-sqare" %>
+                </li>
+                  <li class="search-box">
+                    <input type="text" class="form-control " placeholder="Search">
+                  </li>
+                  
+                </ul>
+                <div class="table-responsive activity-table-scroll-big ">
+                  <table  class="table activity-table" id="sort">
+                    <thead>
+                      <tr class="table-fontsize">
+                        <th scope="col">Department Id</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Employees</th>
+                        <th scope="col">Current Balance</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% @departments.each do |department| %>
+                      <tr class="table-fontsize white-background">
+                        <td><%= department&.id %></td>
+                        <td><%= department&.name %></td>
+                        <td><%= department&.members&.size %></td>
+                        <td><%= department&.wallet&.current_balance %></td>
+                        <td>
+                          <div class="btn-group"> 
+                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fa fa-ellipsis-v "></i>
+                            </a>
+                            <div class="dropdown-menu"> 
+                              <a class="dropdown-item" href="#"><p class="blue-color">Update balance</p></a> 
+                              <a class="dropdown-item" href="#"><p class="blue-color">Bulk Payment</p></a> 
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="list-none d-flex  right-data">
+                  <li>
+                    <div class="pagination">
+                      <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link gray-txt" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link gray-txt active" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link gray-txt" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link gray-txt" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link gray-txt" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="gray-txt total-page">Total 15 items</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </section>
+  </div>

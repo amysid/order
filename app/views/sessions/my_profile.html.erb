@@ -1,0 +1,119 @@
+<div class="wrapper">
+  <section class="custom-wrap">
+    <div class="container">
+      <div class="Dashboard-section">
+        <div class="black-heading">
+          <h4>Edit Profile</h4>
+        </div>
+
+        <div class="row mb-5">
+          <div class="col-md-6">
+            <div class="big-white-card big-profile-card">
+              <div class="welcome-form ">
+                <%= form_with scope: :user,id: "update_profile", url:  update_profile_path do |f| %>
+                  <div class="form-group d-flex">
+                    <label for="exampleInputEmail1" class="gray-txt col-lg-4 col-md-12">Username: </label>
+                    <%= f.text_field :user_name, class: "form-control", placeholder: "User name",:readonly => true %>
+                  </div>
+                  <div class="form-group d-flex">
+                    <label for="exampleInputEmail1" class="gray-txt col-lg-4 col-md-12">Name: </label>
+                    <!-- <input type="text" class="form-control col-lg-8 col-md-12" placeholder="Julius Osanjo"> -->
+                    <%= f.text_field :client_name, class: "form-control", placeholder: "Name" %>
+                  </div>
+                  <div class="form-group d-flex">
+                    <label for="exampleInputEmail1" class="gray-txt col-lg-4 col-md-12">Email:</label>
+                    <%= f.text_field :email, class: "form-control", placeholder: "abc@domain.com",:readonly => true %>
+                  </div>
+                  <div class="form-group d-flex">
+                    <label for="exampleInputEmail1" class="gray-txt col-lg-4 col-md-12">Address:</label>
+                    <%= f.text_field :address, class: "form-control", placeholder: "Address" %>
+                  </div>
+                  <div class="form-group d-flex">
+                    <label for="exampleInputEmail1" class="gray-txt col-lg-4 col-md-12">Gender:</label>
+                    <%= f.text_field :gender, class: "form-control", placeholder: "Name" %>
+                  </div>
+                  <div class="form-group d-flex">
+                    <label for="exampleInputEmail1" class="gray-txt col-lg-4 col-md-12">Country:</label>
+                    <!-- <input type="email" class="form-control col-lg-8 col-md-12" placeholder=""> -->
+                    <%= f.text_field :country, class: "form-control", placeholder: "Country" %>
+                  </div>
+                  <div class="form-group d-flex">
+                    <label for="exampleInputEmail1" class="gray-txt col-lg-4 col-md-12">Mobile Number:</label>
+                    <!-- <input type="email" class="form-control col-lg-8 col-md-12" placeholder=""> -->
+                    <%= f.text_field :mobile, class: "form-control", placeholder: "Mobile Number" %>
+                  </div>
+                  <div class="form-group d-flex">
+                    <label for="exampleInputEmail1" class="gray-txt col-lg-4 col-md-12">Id Number:</label>
+                    <!-- <input type="email" class="form-control col-lg-8 col-md-12" placeholder=""> -->
+                    <%= f.text_field :id, class: "form-control", placeholder: "Id Number",:readonly => true %>
+                  </div>
+                  <div class="form-group d-flex">
+                    <label for="exampleInputEmail1" class="gray-txt col-lg-4 col-md-12">Date of Birth:</label>
+                    <!-- <input type="email" class="form-control col-lg-8 col-md-12" placeholder="dd-mm-yyyy"> -->
+                    <%= f.text_field :dob, class: "form-control", placeholder: "Date of Birth" %>
+                  </div>
+                  <ul class="button-forget-list mt-3 ml-3">
+                      <li>
+                          <!-- <button type="submit" class="btn btn-success save-btn-profile">Save</button> -->
+                           <%= f.submit "Save", class: "btn btn-success save-btn-profile" %>
+                      </li>
+                    <li>
+                      <!-- <button class="btn btn-primary signin-btn-profile" id="change_password">Change Password</button> -->
+                      <a href="javascript:void(0)" class="btn btn-primary signin-btn-profile" id="change_password">Change Password</a>
+
+
+                    </li>
+                  </ul>
+
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="big-white-card big-profile-card profile-space">
+              <div class="circleimg text-center mt-3">
+                <img src="assets/bigprofile.jpeg">
+                <i class="fa fa-camera camera-icon" aria-hidden="true"></i>
+                <p class="blue-txt">
+                Julius Osanjo
+                </p>
+              </div>
+              <div class=" text-box mt-3">
+                <p class="gray-txt">
+                  National Id
+                </p>
+                <div style="display: inline-flex;">
+                    <div class="col-md-6">
+                        <p class="gray-txt mt-3">
+                            Front
+                        </p>
+                        <%= form_tag upload_kyc_document_path, method: :post, class: "dropzone", id: "dropzone-form-id" do %>
+                           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+                              <div class="fallback">
+                                  <%= file_field_tag "front_pic", multiple: false%>
+                              </div>
+                        <% end %>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="gray-txt mt-3">
+                            Back
+                         </p>
+                        <%= form_tag upload_kyc_document_path, method: :post, class: "dropzone", id: "dropzone-form-id" do %>
+                           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+                             <div class="fallback">
+                                  <%= file_field_tag "back_pic", multiple: false%>
+                             </div>
+                        <% end %>
+                    </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+</div>

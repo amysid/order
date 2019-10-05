@@ -1,0 +1,137 @@
+  <div class="wrapper">
+    <section class="custom-wrap">
+      <div class="container">
+        <div class="Dashboard-section">
+          <div class="black-heading">
+            <h4>Manage Department</h4>
+          </div>
+          <div class="airtime-tabs mb-5">
+            <div class="row">
+              <div class="col-3">
+                <div class="nav flex-column nav-pills" id="Airtimes" role="tablist" aria-orientation="vertical">
+                  <a class="nav-link gray-txt" id="edit-tab" data-toggle="pill" href="#edit-details" role="tab"
+                    aria-controls="edit-details" aria-selected="false">Upgrade Balance</a>
+                  <a class="nav-link active gray-txt" id="employee-tab " data-toggle="pill" href="#create-employee" role="tab"
+                    aria-controls="create-employee" aria-selected="true">Create Department</a>
+                </div>
+              </div>
+              <div class="col-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                  <div class="tab-pane fade" id="edit-details" role="tabpanel"
+                    aria-labelledby="edit-tab">
+                    <div class="airtime-data">
+                      <div class="row">
+                        <div class="col-lg-8 col-md-12">
+                          <div class="select-box">
+                            <div class="field">
+                              <form action="float-filed">
+                                <div class="air-dropdown">
+                                  <select>
+                                    <option value="volvo"> Department</option>
+                                  </select>
+                                </div>
+                                <div class="field">
+                                  <input type="text" name="current_balance" placeholder="400,000,000">
+                                  <label for="text" class="label-airtime">Current Balance</label>
+                                </div>
+                                <div class="field">
+                                  <input type="text" name="new_balance" placeholder="800,000,000">
+                                  <label for="text" class="label-airtime">Enter New Balance</label>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="mb-3 mt-3">
+                              <button class="green-btn-sqare">
+                               Update
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-3">
+                            <div class="white-card">
+                              <p class="gray-txt mb-5">
+                               Current Balance
+                              </p>
+                              <ul class="list-none d-flex">
+                                <li class="gray-txt">ksh</li>
+                                <li>
+                                  <h2>367,090</h2>
+                                </li>
+                              </ul>
+                              <div class="mb-3">
+                                <button class="green-btn">
+                                  Fund Wallet<i class="fa fa-arrow-right arrow-btn "></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-3">
+                            <div class="white-card">
+                              <p class="gray-txt mb-5">
+                              Allocated Balance
+                              </p>
+                              <ul class="list-none d-flex">
+                                <li class="gray-txt">ksh</li>
+                                <li>
+                                  <h2>16,060</h2>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-3">
+                            <div class="white-card">
+                              <p class="gray-txt mb-5">
+                               Unallocated Balance
+                              </p>
+                              <ul class="list-none d-flex">
+                                <li class="gray-txt">ksh</li>
+                                <li>
+                                  <h2>367,090</h2>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show active" id="create-employee" role="tabpanel" aria-labelledby="employee-tab ">
+                    <div class="airtime-data">
+                      <div class="row">
+                        <div class="col-lg-8 col-md-12">
+                          <div class="select-box">
+                            <div class="field">
+                              <form action="float-filed">
+                                <div class="field">
+                                  <input type="text" name="name" placeholder="Outgrowers">
+                                  <label for="text" class="label-airtime">Create New Department</label>
+                                </div>
+                                <div class="field">
+                                  <input type="text" name="balance" placeholder="10,000,000">
+                                  <label for="text" class="label-airtime">Enter Balance</label>
+                                </div>
+                                <div class="field">
+                                  <input type="text" name="confirm_balance" placeholder="10,000,000">
+                                  <label for="text" class="label-airtime">Confirm New Balance</label>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="mb-3 mt-3">
+                              <button class="green-btn-sqare">
+                               Create
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>

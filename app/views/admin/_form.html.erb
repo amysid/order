@@ -1,0 +1,89 @@
+<!-- Aside End -->
+<%#= form_with scope: :user, url: admin_index_path , id: "client_registration_form" do |f| %>
+<%#= nested_form_for @user , url: admin_index_path, id: "client_registration_form" do |f| %>
+       <!-- <div class="middle-content">
+         <div class="content-section ">
+       <!-- dashboard-filter Start -->
+        <!-- <div class="top-heading-block">
+           <div class="row">
+           <div class="col-md-12"><h1 class="page-title">Add Client</h1></div>
+         </div>
+        </div>
+        <div class="profile-box max-WT-800">
+           <form class="edit-profile"> --> 
+            <div class="center-box max-WT-500">
+              <div class="row form-group">
+                 <label class="control-label col-md-4">Client Name</label>
+                 <div class="col-md-8">
+                   <%= f.text_field :client_name, class: "form-control", placeholder: "Client Name" %>
+                  <!-- <input class="form-control" type="text" placeholder="Enter Name" name=""> -->
+                 </div>
+               </div>
+               <div class="row form-group">
+                 <label class="control-label col-md-4">User Name</label>
+                 <div class="col-md-8">
+                  <%= f.text_field :user_name, class: "form-control", placeholder: "User Name" %>
+                <!--  <input class="form-control" type="text" placeholder="Enter Username"> -->
+                 </div>
+               </div>
+               <div class="row form-group">
+                 <label class="control-label col-md-4">Email</label>
+                 <div class="col-md-8">
+                  <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+                <!--   <input class="form-control" type="text" placeholder="Enter Email"> -->
+                 </div>
+               </div>
+               <div>
+                 <%= f.fields_for :comission  do |comission_form| %>
+                 <div class="field">
+                   <div class="row form-group">
+                     <label class="control-label col-md-4">Commission(%)</label>
+                     <div class="col-md-8">
+                      <%= comission_form.text_field :to_wallet, class: "form-control", placeholder: "wallet to wallet" %><br><!-- <input class="form-control" type="text" placeholder="0.00%"> -->
+                     </div>
+                     <div class="col-md-8">
+                      <%= comission_form.text_field :to_bank, class: "form-control", placeholder: "wallet to bank" %><br><!-- <input class="form-control" type="text" placeholder="0.00%"> -->
+                     </div>
+                     <div class="col-md-8">
+                      <%= comission_form.text_field :to_mobile, class: "form-control", placeholder: "wallet to mobile money" %><!-- <input class="form-control" type="text" placeholder="0.00%"> -->
+                     </div>
+                   </div>
+                 </div>
+                 <%end%>
+               </div>
+
+               <% if params[:action] != "edit" %>
+               <div class="row form-group">
+                 <label class="control-label col-md-4">Create Password</label>
+                 <div class="col-md-8">
+                  <!-- <input class="form-control" type="password" placeholder="*************"> -->
+                   <%= f.password_field :password, class: "form-control", placeholder: "*************" %>
+                 </div>
+               </div>
+               <div class="row form-group">
+                 <label class="control-label col-md-4">Confirm Password</label>
+                 <div class="col-md-8">
+                  <!-- <input class="form-control" type="password" placeholder="*************"> -->
+                   <%= f.password_field :confirm_password, class: "form-control", placeholder: "*************" %>
+                 </div>
+               </div>
+              <%end%>
+           <!-- <div class="mt30 button-block text-center">
+             <!-- <a href="Clientmanagement.html" class="btn btn-dark-blue btn-large">Add Client </a> -->
+             <%#= f.submit "Add Client", class: "btn btn-dark-blue btn-large" %>
+           <!-- </div>
+           </div> -->
+           <!-- </form>
+       </div>
+
+
+      </div>
+         <!-- content-section End -->
+      <!-- </div> -->
+
+    <!-- </div> -->
+<%#end%>
+
+
+      <!-- Footer Finish -->
+   <!-- Wrapper End -->

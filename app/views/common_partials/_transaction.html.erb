@@ -1,0 +1,225 @@
+  <div class="wrapper">
+    <section class="custom-wrap">
+      <div class="container">
+        <div class="Dashboard-section">
+          <div class="black-heading">
+            <h4>Dashboard</h4>
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt mb-5">
+                  Current Balance
+                </p>
+                <ul class="list-none d-flex">
+                  <li class="gray-txt">ksh</li>
+                  <li>
+                    <h2 class="subheading-big">4,040,055</h2>
+                  </li>
+                </ul>
+                <div class="mb-3">
+                  <button class="green-btn">
+                    Fund Wallet<i class="fa fa-arrow-right arrow-btn "></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt mb-5">
+                  Current Balance
+                </p>
+                <ul class="list-none d-flex">
+                  <li class="gray-txt">ksh</li>
+                  <li>
+                    <h2 class="subheading-big">1,040,055</h2>
+                  </li>
+                </ul>
+                <div class="mb-3">
+                  <button class="green-btn ">
+                    Manage Balance<i class="fa fa-arrow-right arrow-btn "></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt">
+                  Incoming
+                </p>
+                <div class="send-border"></div>
+                <ul class="list-none d-flex expenditure-list mt-5">
+                  <li class="blue-color">
+                    <p>ksh <sub class="subheading-big">19,968,855</sub><br><br><br><img src="/assets//greenarrow.png"
+                        class="arrow-green transactionimg"><span class="gray-txt">+5%</span></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt">
+                  Outgoing
+                </p>
+                <div class="send-border"></div>
+                <ul class="list-none d-flex expenditure-list mt-5">
+                  <li class="gray-color">
+                    <p>ksh <sub class="subheading-big">15,023,201</sub><br><br><br><img src="/assets//redarrow.png" class="arrow-green transactionimg"><span class="gray-txt">-10%</span></p>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+          <div class="row mt-5 mb-5">
+            <div class="col-md-12">
+              <div class="">
+                <ul class="list-none d-flex j-space">
+                  <li>
+                    <p class="black-bold-color">Activity Logs</p>
+                  </li>
+                </ul>
+            <%= form_with scope: :user,url:transactions_search_path,method: :get, local:true do |f| %>
+                <ul class="list-none d-flex right-data">
+                  <li class="gray-txt mr-3 mt-1">Date Range</li>
+                  <li class="date-1">
+                    <!-- <input type="date" class="form-control"> -->
+                     <%= f.date_field :start_date,class: "form-control",id: "start_date"%>
+                  </li>
+                  <li class="to">to</li>
+                  <li class="date-2">
+                    <!-- <input type="date" class="form-control "> -->
+                    <%= f.date_field :end_date,class: "form-control",id: "start_date"%>
+                  </li>
+                  <li class="search-box">
+                    <!-- <input type="text" class="form-control " placeholder="Search"> -->
+                    <%= f.text_field :transaction ,class: "form-control",placeholder: "search",id: "transactions"%>
+                  </li>
+                  <li class="search-box">
+                     <%= f.submit :Search,class: "form-control" %>
+                     <% end%>
+                    <div class="dropdown">
+                      <button class="btn btn-primary drop-btn  dropdown-toggle" type="button" data-toggle="dropdown">
+                      <span class="caret"></span></button>
+                      <% if params[:user].present?%>
+                      <ul class="dropdown-menu">
+                        <li><%= link_to "CSV", transactions_path(format: "csv",user: @user) %></li>
+                      <li> <%= link_to "Excel", transactions_path(format: "xls",user: @user) %></li>
+                      <li> <%= link_to "Pdf", transactions_path(format: "pdf",user: @user) %></li>
+                      </ul>
+                      <% else %>
+                      <ul class="dropdown-menu">
+                        <li><%= link_to "CSV", transactions_path(format: "csv") %></li>
+                      <li> <%= link_to "Excel", transactions_path(format: "xls") %></li>
+                      <li> <%= link_to "Pdf", transactions_path(format: "pdf") %></li>
+                      </ul>
+                      <%end%>
+                    </div>
+                  </li>
+                </ul>
+                <div class="table-responsive activity-table-scroll-big ">
+                  <div id="transaction_table">
+                  <table class="table activity-table">
+                    <thead>
+                      <tr class="table-fontsize">
+                        <th scope="col"><select class="table-select ">
+                            <option value="volvo">Date</option>
+                          </select></th>
+                          <th scope="col"><select class="table-select ">
+                              <option value="volvo">Transaction Id</option>
+                            </select></th>
+                            <th scope="col"><select class="table-select ">
+                                <option value="volvo">Category</option>
+                              </select></th>
+                              <th scope="col"><select class="table-select ">
+                                  <option value="volvo">Transaction Type</option>
+                                </select></th>
+                                <th scope="col"><select class="table-select ">
+                                    <option value="volvo">Benificiary</option>
+                                  </select></th>
+                                  <th scope="col"><select class="table-select ">
+                                      <option value="volvo">Amount</option>
+                                    </select></th>
+                                    <th scope="col"><select class="table-select ">
+                                        <option value="volvo">Status</option>
+                                      </select></th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <% @transactions.each do |transaction| %>
+                  <tr class="table-fontsize white-background">
+                  <td><%= transaction.created_at.to_date%></td>
+                  <td><%= transaction.id %></td>
+                  <td><%= transaction.transaction_category_id %></td>
+                  <td><%= "transaction type" %></td>
+                  <td><%= transaction.beneficiary%></td>
+                  <td><%= transaction.currency_id %></td>
+                  <td><%= transaction.status%></td>
+                  <td><%= link_to "Details",transaction_path(transaction),remote: true %></td>
+                  </tr>
+                  <% end%>
+                    </tbody>
+                  </table>
+                  </div>
+                   <%= render 'dialog' %>
+                </div>
+            <div class="d-flex align-items-center flex-wrap justify-content-between">
+           <div class="">
+              <p class="mb0">Showing <%= @pagy.from%> to <%=@pagy.to%> of <%= @pagy.count %> entries</p>
+           </div>
+
+            <div class="custom-pagination mt0 ">
+                <nav aria-label="Page navigation example ">
+                    <ul class="pagination">
+                        <li class="page-item">
+                          <%#== pagy_nav(@pagy) %>
+                          <%== pagy_bootstrap_nav(@pagy) %>
+                          <%##== pagy_bootstrap_nav_js(@pagy) %>
+
+                           <%#= will_paginate @transaction  %>
+
+
+
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+          </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </section>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- For date is less than end date -->
+    <script>
+
+function date_format()
+{
+  var start_date =document.getElementById("start_date").value;
+  var end_date =document.getElementById("end_date").value;
+ if(Date.parse(end_date)<= Date.parse(start_date))
+ {
+  alert("end date should be greater than start date");
+  document.getElementById("end_date").value="";
+}
+}
+    </script>

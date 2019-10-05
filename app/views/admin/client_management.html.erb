@@ -1,0 +1,113 @@
+<div class="wrapper">
+    <section class="custom-wrap">
+      <div class="container">
+        <div class="Dashboard-section">
+          <div class="black-heading">
+            <h4>Client</h4>
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt mb-5">
+                  Current Balance
+                </p>
+                <ul class="list-none d-flex">
+                  <li class="gray-txt">ksh</li>
+                  <li class="h2">
+                    <%= @balance %>
+                  </li>
+                </ul>
+                <div class="mb-3">
+                  <button class="green-btn">
+                    Fund Wallet<i class="fa fa-arrow-right arrow-btn "></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt mb-5">
+                  Unallocated Balance
+                </p>
+                <ul class="list-none d-flex">
+                  <li class="gray-txt">ksh</li>
+                  <li class="h2">
+                    <%= "1,234,56" %>
+                  </li>
+                </ul>
+                <div class="mb-3">
+                  <button class="green-btn ">
+                    Manage Balance<i class="fa fa-arrow-right arrow-btn "></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt">
+                  Incoming
+                </p>
+                <div class="send-border"></div>
+                <ul class="list-none d-flex expenditure-list mt-5">
+                  <li class="blue-color">
+                    <p>ksh <sub class="subheading-big"><%="19,968,855"%></sub><br><br><br><img src="/assets/greenarrow.png"
+                        class="arrow-green transactionimg"><span class="gray-txt"><%="+5%"%></span></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt">
+                  Outgoing
+                </p>
+                <div class="send-border"></div>
+                <ul class="list-none d-flex expenditure-list mt-5">
+                  <li class="gray-color">
+                    <p>ksh <sub class="subheading-big"><%="15,023,201"%></sub><br><br><br><img src="/assets/redarrow.png" class="arrow-green transactionimg"><span class="gray-txt"><%="-10%"%></span></p>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+          <div class="row mt-5 mb-5">
+            <div class="col-md-12">
+              <div class="">
+                <ul class="list-none d-flex j-space">
+                  <li>
+                    <p class="black-bold-color">Client Management</p>
+                  </li>
+                </ul>
+                <ul class="list-none d-flex right-data">
+                  <a href="/admin/new">
+                  <button class="large-green-btn">
+                    Create New Client
+                  </button>
+                  </a>
+                  <li class="search-box">
+                    <input type="text" class="form-control " placeholder="Search" id="search">
+                  </li>
+                  <li class="search-box">
+                    <div class="dropdown">
+                      <button class="btn btn-primary drop-btn  dropdown-toggle" type="button" data-toggle="dropdown">
+                      <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Update balance</a></li>
+                        <li><a href="#">Edit details</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <div id="filtered_clients">
+                  <%= render 'common_partials/client_list' %>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </section>
+    </div>

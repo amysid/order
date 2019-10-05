@@ -1,0 +1,8 @@
+              <div class="table-fontsize white-background">Date:<%= @transaction.created_at.to_date%></div><br>
+                  <div class="table-fontsize white-background">Transaction_id:<%= @transaction.id %></div><br>
+                  <div class="table-fontsize white-background">Category:<%= @transaction.transaction_category_id %></div><br>
+                  <div class="table-fontsize white-background">Transaction Type:<%= "transaction type" %></div><br>
+                  <div class="table-fontsize white-background">Beneficiary: <%= @transaction.beneficiary%></div><br>
+                  <div class="table-fontsize white-background">Curreny: <%= @transaction.currency_id %></div><br>
+                  <div class="table-fontsize white-background">Status: <%= @transaction.status%></div><br>
+                  

@@ -1,0 +1,6 @@
+
+$("#filtered_clients").html("<%= escape_javascript( render(:partial => 'common_partials/client_list') ) %>")
+$('.pagination a').attr('data-remote', 'true');
+
+
+//$('#comments ul.comments').append("<%#= escape_javascript render(:partial => 'comments/single', :locals => { :c => @comment }) %>");

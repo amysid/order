@@ -1,0 +1,62 @@
+  <div class="wrapper">
+    <section class="custom-wrap">
+      <div class="container">
+        <div class="Dashboard-section">
+          <div class="black-heading">
+            <h4>Create Product</h4>
+          </div>
+          <div class="middle-content">
+            <div class="content-section">
+           <div class="top-heading-block">
+              <div class="row">
+              <div class="col-md-12"><h1 class="page-title">Product</h1></div>
+            </div>
+           </div>
+           <div class="airtime-data">
+            <div class="row">
+              <div class="col-lg-8 col-md-12">
+                <div class="select-box">
+                  <div class=" field">
+           <div class="profile-box max-WT-800">
+                <%= form_with scope: :product, url: products_path,method: :post, id: "admin_client_registration_form",class: "edit-profile" do |f| %>
+               <div class="center-box max-WT-500">
+                 <div class="row form-group">
+                    <label class="control-label col-md-4">Product Name</label>
+                    <div class="col-md-8">
+                    
+                     <%= f.text_field :name, class: "form-control"%>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="control-label col-md-4">Product Image</label>
+                    <div class="col-md-8">
+                     <%= f.file_field :image, class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="control-label col-md-4">Product Description</label>
+                    <div class="col-md-8">
+                     <%= f.text_area :description, class: "form-control"%>
+                    </div>
+                  </div>
+              <div class="mt30 button-block text-center">
+                <%= f.submit "Add product",class: "btn btn-primary signin-btn" %>
+              </div>
+              </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+         </div>
+         </div>
+       </div>
+     </div>
+   </section>
+ </div>
+
+
+

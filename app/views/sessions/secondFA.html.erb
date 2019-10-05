@@ -1,0 +1,129 @@
+<!-- <!DOCTYPE html>
+<html lang="en"> -->
+  <!--  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,width=device-width,user-scalable=no">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title></title>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="fonts/stylesheet.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/mobile.css" rel="stylesheet">
+   </head> -->
+   <!-- <h1>sgsgdgqwjhsghwksh</h1>
+   <body class="beforelogin">
+   <%#= form_with url: confirm_secondFa_path, id: "sec_form"  do |f| %>
+      <div class="row align-items-center bodywraper">
+         <div class="col">
+
+            <div class="login-box max-WT-500">
+               <div class="login-box-body">
+                  <div class="text-center">
+                     <h3>2FA</h3>
+                  </div>
+			     <div class="form-group">
+				   <input type="text" class="form-control form-control-style1" name="token" placeholder="Enter authentication code send on email" required/>
+				 </div>
+             <div class="d-flex justify-content-between">
+                <div class="left-sidetxt">
+                   <-!-- <a href="/resend">Don't Recive?</a> -->
+                   <%#= link_to  "Didn't Received?" , resend_path%>
+                <!-- </div> -->
+                <!-- <div class="right-sidetxt"> -->
+                   <%#= link_to  "Resend" , resend_path%>
+                <!-- </div> -->
+             <!-- </div> -->
+				 <!-- <div class="text-center mt-20"> -->
+				 <!--  <a  class="btn btn-gray btn-large radius0" href="dashboard.html">VERIFY</a> -->
+          <%#= f.submit "VERIFY", class: "btn btn-gray btn-large radius0" %>
+				 <!-- </div> -->
+            <!-- </div> -->
+       <!-- </div> -->
+      <%#end%>
+   <!-- </div> -->
+ <!-- </div> -->
+
+    <!-- <footer>
+            <div class="text-center">
+               Copyright @ 2018. All rights are reserved.
+            </div>
+   </footer> -->
+
+      <!-- <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/common.js"></script> -->
+   <!-- </body> -->
+<!-- </html> -->
+
+<!-- <body class="blue-body"> -->
+  <div class="wrapper backgroundwrapper">
+    <section class="custom-wrap custom-middle">
+      <div class="container">
+          <div class=" middle-box">
+<div class="row">
+
+    <div class="col-md-6 col-sm-12">
+        <div class="blue-box">
+ <div class="mwaloni">
+    <h4>Mwaloni</h4>
+    <p>Intelligent Systems</p>
+ </div>
+ <div class="tree-img">
+   <img src="assets/Layer 1.png">
+ </div>
+        </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="verification-form">
+                <%= form_with scope: :verify_otp, url: confirm_secondFa_path, id: "sec_form", local: true  do |f| %>
+                  <div class="welcome-heading">
+                  <h4>
+                    Enter Code
+                  </h4>
+                  <p class="gray-txt">Enter code sent to your email <%= @email %></p>
+                  </div>
+                    <div class="form-group mt-5">
+                      <label for="exampleInputEmail1" class="gray-txt">Enter 6 Digit Code</label>
+                      <div class="googleAuthWrap">
+                          <%= f.password_field :otp, name: "verify_otp[otp][]",maxLength: 1, class: "form-control otp", onfocus: "this.value=''" %>
+                          <%= f.password_field :otp, name: "verify_otp[otp][]",maxLength: 1, class: "form-control otp", onfocus: "this.value=''" %>
+                          <%= f.password_field :otp, name: "verify_otp[otp][]",maxLength: 1, class: "form-control otp", onfocus: "this.value=''" %>
+                          <%= f.password_field :otp, name: "verify_otp[otp][]",maxLength: 1, class: "form-control otp", onfocus: "this.value=''" %>
+                          <%= f.password_field :otp, name: "verify_otp[otp][]",maxLength: 1, class: "form-control otp", onfocus: "this.value=''" %>
+                          <%= f.password_field :otp, name: "verify_otp[otp][]",maxLength: 1, class: "form-control otp", onfocus: "this.value=''" %>
+                        </div>
+                    </div>
+
+                  <ul class="button-forget-list  mt-5">
+                    <li>
+                        <!-- <button type="submit" class="btn btn-primary signin-btn">Submit</button> -->
+                        <%= f.submit "Submit", class: "btn btn-primary signin-btn" %>
+                    </li>
+                    <li>
+                      <span class="gray-txt">Back to</span> <span class="blue-txt">
+                      <%= link_to  "Sign in" , root_path, class: "blue-txt" %>
+                      </span>
+                    </li>
+                  </ul>
+                  <div class="form-group mt-5">
+                     <span class="gray-txt">Didn't recieve the mail? Check spam or </span> <span class="blue-txt">
+                      <a class="blue-txt resend" href="javascript:void(0)">resend?</a> <%#= link_to  "resend?" , resend_path, class: "blue-txt resend" %></span>
+
+                    </div>
+                  <%end%>
+            </div>
+            </div>
+</div>
+</div>
+      </div>
+    </section>
+
+
+
+  </div>
+

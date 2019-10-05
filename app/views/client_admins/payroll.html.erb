@@ -1,0 +1,144 @@
+<div class="wrapper">
+    <section class="custom-wrap">
+      <div class="container">
+        <div class="Dashboard-section">
+          <div class="black-heading">
+            <h4>Payroll</h4>
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt mb-5">
+                  Current Unallocated Balance
+                </p>
+                <ul class="list-none d-flex">
+                  <li class="gray-txt">ksh</li>
+                  <li>
+                    <h2 class="subheading-big">1,040,055</h2>
+                  </li>
+                </ul>
+                <div class="mb-3">
+                  <button class="green-btn">
+                    Fund Wallet<i class="fa fa-arrow-right arrow-btn "></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt mb-5">
+                Expected Total Payroll
+                </p>
+                <ul class="list-none d-flex">
+                  <li class="gray-txt">ksh</li>
+                  <li>
+                    <h2 class="subheading-big">320,500</h2>
+                  </li>
+                </ul>
+                <div class="mb-3">
+                    <button class="green-btn">
+                      Confirm Payment(s)<i class="fa fa-arrow-right arrow-btn "></i>
+                    </button>
+                  </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="white-card">
+                    <p class="gray-txt mb-5">
+                  Total Charges
+                    </p>
+                    <ul class="list-none d-flex">
+                      <li class="gray-txt">ksh</li>
+                      <li>
+                        <h2 class="subheading-big">300</h2>
+                      </li>
+                    </ul>
+               
+                  </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="white-card">
+                    <p class="gray-txt mb-5">
+       Expected Total Disbursments
+                    </p>
+                    <ul class="list-none d-flex">
+                      <!-- <li class="gray-txt">ksh</li> -->
+                      <li>
+                        <h2 class="subheading-big">30</h2>
+                      </li>
+                    </ul>
+               
+                  </div>
+            </div>
+          </div>
+          <div class="row mt-5 mb-5">
+            <div class="col-md-12">
+              <div class="">
+                <ul class="list-none d-flex j-space">
+                  <li>
+                    <p class="black-bold-color">Employee Management</p>
+                  </li>
+                </ul>
+                <ul class="list-none d-flex right-data">
+       
+                  <li class="search-box">
+                    <input type="text" class="form-control " placeholder="Search">
+                  </li>
+                  
+                </ul>
+                <div class="table-responsive activity-table-scroll-big ">
+                  <table  class="table activity-table payrolltable" id="sort">
+                    <thead>
+                      <tr class="table-fontsize">
+                        <th scope="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">Employee ID</label>
+                              </div>
+                          <!-- <input type="checkbox" id="defaultCheck" name="example2">Employee Id -->
+                        </th>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col">Mobile Number</th>
+                        <th scope="col">ID Number</th>
+                        <th scope="col">Email Address</th>
+                        <th scope="col">Allocate Funds</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <%= form_tag abc_client_admins_path,method: :get,local: true do %>
+                      <% @departments.each do |department| %>
+                      <tr class="table-fontsize white-background">
+                        
+                        <td><div class="form-check form-check-inline">
+                            <!-- <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> -->
+                             <%= check_box("tag", department.id) %>
+                            <label class="form-check-label" for="inlineCheckbox1"><%= department.id%></label>
+                          </div></td>
+                        <td><%= department.user_name%> </td>
+                        <td><%= department.mobile%></td>
+                        <td>20123456</td>
+                        <td><%= department.email%></td>
+                        <td><%= department.wallet.current_balance %></td>
+                        <td><%= "department.status"%></td>
+                    </tr>
+                          <%end%>             
+                    </tbody>
+                  </table>
+                <%= submit_tag "submit",class: "green-btn"%>
+                   
+                       <% end%>
+                </div>
+         
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </section>
+
+  </div>
+
+

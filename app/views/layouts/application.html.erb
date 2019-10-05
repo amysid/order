@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DigitalWallet</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= alertify_flash %>
+  </head>
+
+  <body>
+    <% if current_user&.role == "Client" %>
+      <%= render "layouts/client_header" %>
+      <%= yield %>
+      <%= render "layouts/client_footer" %>
+    <% elsif current_user&.role == "Admin" || current_user&.role == "Agent"%>
+      <%= render "layouts/header" %>
+      <%= yield %>
+    <% else %>
+      <%= yield %>
+    <% end %>
+  </body>
+</html>

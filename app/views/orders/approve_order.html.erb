@@ -1,0 +1,52 @@
+  <div class="wrapper">
+    <section class="custom-wrap">
+      <div class="container">
+        <div class="Dashboard-section">
+          <div class="row mt-5 mb-5">
+            <div class="col-md-12">
+              <div class="">
+                <ul class="list-none d-flex j-space">
+                  <li>
+                    <p class="black-bold-color">Approved Orders</p>
+                  </li>
+                </ul>
+                <ul class="list-none d-flex right-data">
+                  <li class="search-box">
+                    <input type="text" class="form-control " placeholder="Search">
+                  </li>
+                </ul>
+                <div class="table-responsive activity-table-scroll-big ">
+                  <table  class="table activity-table" id="sort">
+                    <thead>
+                      <tr class="table-fontsize">
+                        <th scope="col">id</th>
+                        <th scope="col">order Name</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">File</th>
+                        <th scope="col">Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% @orders.each_with_index do |order, i| %>
+                      <tr class="table-fontsize white-background">
+                        <td style="width: 5%"><%= i+1 %></td>
+                        <td style="width: 10%"><%= order&.product.name %></td>
+                        <td style="width: 30%"><img src="<%= order.image.url %>"></td>
+                        <td style="width: 30%">
+                          File1.pdf <br>
+                          <button class="btn btn-outline-primary btn-sm">Download</button> 
+                        </td>
+                        <td style="width: 40%"><%= order&.comment %></td>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+            
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </section>
+
+  </div>

@@ -1,0 +1,45 @@
+<div class="navigarigtion-bar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light header-dashboard">
+        <a class="navbar-brand header-img" href="#"><img src="/assets/blacktree.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link nblue-txt" href="<%=root_path%>">Dashboard<span class="sr-only"></span></a>
+                </li>
+                <% if current_user&.role == "Admin" %>
+                <li class="nav-item">
+                    <a class="nav-link gray-txt" href="/products">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link gray-txt" href="/orders">Order</a>
+                </li>
+                <% end %>
+                <% if current_user&.role == "Agent" %>
+                <li class="nav-item">
+                    <a class="nav-link gray-txt" href="/orders/approve_order">Product Orders</a>
+                </li>
+                <%end%>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <ul class="welcome-kanera">
+                    <li class="dropdown user user-menu open">
+                        <ul class="welcome-kanera">
+                            <li>
+                              <p class="gray-txt mb-0">Welcome</p>
+                              <p class="welcome-kanera"><%= current_user&.name%></p>
+                            </li>
+                            <li class="header-img">
+                              <a href="<%= logout_path %>" class="btn btn-default btn-flat">
+                                <button class="btn btn-outline-dark btn-sm"> Sign out</button></a>
+                            </li>
+                          </ul>
+                  </li>
+                
+                </ul>
+            </form>
+        </div>
+    </nav>
+</div>

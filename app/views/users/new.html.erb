@@ -1,0 +1,61 @@
+<body class="blue-body">
+  <div class="wrapper backgroundwrapper">
+    <section class="custom-wrap custom-middle">
+      <div class="container">
+          <div class=" middle-box">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="blue-box">
+                  <div class="mwaloni">
+                    <h4>Mwaloni</h4>
+                    <p>Intelligent Systems</p>
+                  </div>
+                  <div class="tree-img">
+                    <img src="assets/Layer 1.png">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="welcome-form ">
+                  <%= form_with scope: :user,url: login_path, id: "user_login_form" do |f| %>
+                    <div class="welcome-heading">
+                      <h4>
+                        Welcome back
+                      </h4>
+                    </div>
+                      <div class="form-group mt-5">
+                        <label for="exampleInputEmail1" class="gray-txt">Your email</label>
+                        <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number e.g 0721 123 456"> -->
+                        <%= f.text_field :email,class: "form-control form-input t-11" ,"aria-describedby": "emailHelp" ,placeholder: "Email Address" %>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1" class="gray-txt">Password</label>
+                        <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+                         <%= f.password_field :password,class: "form-control form-input t-11","aria-describedby": "emailHelp",placeholder: "Password" %>
+                      </div>
+                      <ul class="button-forget-list mt-3">
+                        <li>
+                          <!-- <button type="submit" class="btn btn-primary signin-btn">Sign in</button> -->
+                          <%= f.submit "Sign in",class: "btn btn-primary signin-btn" %>
+                        </li>
+                        <li>
+                          <!-- <span class="gray-txt">Forgot password?</span> -->
+                          <span class = "gray-txt"><%= link_to 'Forgot Password', request_password_users_path%></span>
+                        </li>
+                      </ul>
+
+                      <%end%>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="/assets/jquery-3.4.1.min.js"></script>
+  <script src="/assets/bootstrap.bundle.min.js"></script> -->
+  <!-- <script src="/assets/wow.min.js"></script> -->
+
+
+</body>
