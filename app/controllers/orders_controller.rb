@@ -10,7 +10,6 @@ class OrdersController < ApplicationController
 	def create
 		product = Product.find(params[:product_id])
 		order = product.orders.new(order_params)
-		# binding.pry
 		if order.save
 			flash[:success] = "Order has been placed!"
 		else
@@ -26,7 +25,7 @@ class OrdersController < ApplicationController
 
 	private
 	def order_params
-		# params.require(:order).permit(:image, :file, :comment, :user_id)
-		params.require(:order).permit(:image, :comment, :user_id)
+		params.require(:order).permit(:image, :file, :comment, :user_id)
+		# params.require(:order).permit(:image, :comment, :user_id)
 	end
 end

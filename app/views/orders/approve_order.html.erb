@@ -33,8 +33,10 @@
                         <td style="width: 10%"><%= order&.product.name %></td>
                         <td style="width: 30%"><img src="<%= order.image.url %>"></td>
                         <td style="width: 30%">
-                          File1.pdf <br>
-                          <button class="btn btn-outline-primary btn-sm">Download</button> 
+                          <%= order&.file&.file&.file&.split('/')&.last() %> <br>
+                          <a href="<%= order&.file %>">
+                            <button class="btn btn-outline-primary btn-sm">Download</button> 
+                          </a>
                         </td>
                         <td style="width: 40%"><%= order&.comment %></td>
                       <% end %>
