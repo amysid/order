@@ -11,15 +11,11 @@
               <div class="">
                 <ul class="list-none d-flex j-space">
                   <li>
-                    <p class="black-bold-color">Product Management</p>
+                    <p class="black-bold-color">User Management</p>
                   </li>
                 </ul>
                 <ul class="list-none d-flex right-data">
-               <li class="search-box">
-               	<a href="/products/new">
-               	<button class="green-btn-sqare create-btn-sqare">Create New Product</button>
-               </a>
-               </li>
+               
                   <li class="search-box">
                     <input type="text" class="form-control " placeholder="Search">
                   </li>
@@ -30,24 +26,18 @@
                     <thead>
                       <tr class="table-fontsize">
                         <th scope="col">id</th>
-                        <th scope="col">Product Name</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Email</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <% @products.each_with_index do |product, i| %>
+                      <% @users.each_with_index do |user, i| %>
                       <tr class="table-fontsize white-background">
                         <td style="width: 5%"><%= i+1 %></td>
-                        <td style="width: 20%"><%= product&.name %></td>
-                        <td style="width: 30%"><img src="<%= product.image.file_url %>" alt=""></td>
-                        <td><%= product&.description %></td>
-                        <td>
-                          <div class="elips">
-                            <i class="fa fa-ellipsis-v doted "></i>
-                          </div>
-                        </td>
-                      </tr>
+                        <td style="width: 10%"><%= user&.user_name %></td>
+                        <td style="width: 30%"><%= user&.email %></td>
+                      
+
                       <% end %>
                     </tbody>
                   </table>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :orders do
    collection do
     get :approve_order
+    get :client_user
    end
  end
   resources :clients

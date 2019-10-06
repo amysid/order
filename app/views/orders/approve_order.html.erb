@@ -21,8 +21,8 @@
                       <tr class="table-fontsize">
                         <th scope="col">id</th>
                         <th scope="col">order Name</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">File</th>
+                        <th scope="col">Image/File</th>
+                        <!-- <th scope="col">File</th> -->
                         <th scope="col">Description</th>
                       </tr>
                     </thead>
@@ -31,13 +31,19 @@
                       <tr class="table-fontsize white-background">
                         <td style="width: 5%"><%= i+1 %></td>
                         <td style="width: 10%"><%= order&.product.name %></td>
-                        <td style="width: 30%"><img src="<%= order.image.url %>"></td>
+                        <%if order.file.format == "pdf"%>
+                          <td style="width: 30%">
+                            <a download="section name" href="<%= order&.file&.url%>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>PDF</a></td>
+                          <%else%>
+                          <td style="width: 30%"><img src="<%= order&.file&.url%>" alt=""></td>
+                          <%end%>
+                    <!--     <td style="width: 30%"><img src="<%#= order.image.file_url %>"></td>
                         <td style="width: 30%">
-                          <%= order&.file&.file&.file&.split('/')&.last() %> <br>
-                          <a href="<%= order&.file %>">
+                          <%#= order&.file&.file&.file&.split('/')&.last() %> <br>
+                          <a href="<%#= order&.file %>">
                             <button class="btn btn-outline-primary btn-sm">Download</button> 
                           </a>
-                        </td>
+                        </td> -->
                         <td style="width: 40%"><%= order&.comment %></td>
                       <% end %>
                     </tbody>

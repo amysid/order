@@ -6,11 +6,11 @@
                     <div class="col-md-6">
                         <div class="blue-box">
                             <div class="mwaloni">
-                                <h4>Mwaloni</h4>
-                                <p>Intelligent Systems</p>
+                                <h4>PrintAny</h4>
+                                <!-- <p>Intelligent Systems</p> -->
                             </div>
                             <div class="tree-img">
-                                <img src="assets/Layer 1.png">
+                                <img src="/assets/mainLogoAR.jpg">
                             </div>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                             <%= form_with scope: :user,url: sessions_register_path, id: "user_signup_form" do |f| %>
                              <div class="form-group mt-5">
                                 <label for="exampleInputEmail1" class="gray-txt">Name</label>
-                                <%= f.text_field :name,class: "form-control form-input t-11" ,"aria-describedby": "emailHelp" ,placeholder: "Name" %>
+                                <%= f.text_field :user_name,class: "form-control form-input t-11" ,"aria-describedby": "emailHelp" ,placeholder: "Name" %>
                             </div>
                             <div class="form-group mt-5">
                                 <label for="exampleInputEmail1" class="gray-txt">Email</label>
@@ -40,16 +40,21 @@
                                   <option value="Agent">Agent</option>
                               </select>
                             </div>
-                            <ul class="button-forget-list mt-3">
+                             <ul class="button-forget-list mt-3">
                                 <li>
-                                    <%= f.submit "Sign up",class: "btn btn-primary signin-btn" %>
+                                    <%= f.submit "Sign up",class: "nav-link btn btn-outline-dark" %>
                                 </li>
                                 <li>
                                     <span class="gray-txt">
-                                        <%= link_to 'Log in', login_path%>
-                                    </span>
+                                        <div>
+                                        <a class="nav-link btn btn-outline-dark" href="<%#= sessions_path %>/">Log in</a>
+                    
+                                        </div>
+                                    
+
                                 </li>
                             </ul>
+                            
                             <%end%>
                         <!-- </div> -->
                     </div>

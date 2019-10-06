@@ -1,17 +1,19 @@
 <div class="page-wrapper">
   <div class="container home-wrap">
     <div class="row">
-      <div class="left-side">
+      <div class="left-side col-sm-12">
         <h3 class="widget-title"><%= @product&.name%></h3>
       </div>
     </div>
     <div class="row">
         <div class="col-md-6">
           <div class="post-details">
-            <img src="<%= @product&.image&.url %>" alt="">
-            <br><br>
-            <h3 class="tag"><span>Details</span></h3>
-            <p><%= @product&.description %></p>
+            <img src="<%= @product&.image&.file_url %>" alt="">
+            <div class="product-details">
+               <!-- <h5 class="tag"><span>Details</span></h5> -->
+              <p><%=  @product&.description %></p>
+            </div>
+           
           </div>
         </div>
         <div class="col-md-6">
@@ -19,16 +21,15 @@
             <%= form_with scope: :order, url: orders_path,method: :post, id: "order_form",class: "edit-profile" do |f| %>
               <input type="hidden" name="product_id" value="<%= @product&.id %>">
               <input type="hidden" name="order[user_id]" value="<%= current_user&.id %>">
-              <img src="/assets/size.png" id="img_preview" style="max-width: 400px; max-height: 300px">
+              <!-- <img src="/assets/size.png" id="img_preview" style="max-width: 400px; max-height: 300px"> -->
               <div>
-                <h5>Select Image: </h5><%= f.file_field :image, id: "imgInp", class: "form-control",  accept: "image/*" %>
+                <h5>Select Image: </h5><%= f.file_field :image, id: "imgInp", class: "form-control",  accept: "" %>
               </div>
+              <!-- <div>
+                <h5>Select File: </h5><%#= f.file_field :image, class: "form-control", accept: "application/msword,text/plain, application/pdf,"%>
+              </div> -->
               <div>
-                <h5>Select File: </h5><%= f.file_field :file, class: "form-control", accept: "application/msword,
-text/plain, application/pdf,"%>
-              </div>
-              <div>
-                <h5>Remarks: </h5><%= f.text_field :comment,class: "form-control", placeholder: "Add extra comments..." %>
+                <h5>Remarks: </h5><%= f.text_area :comment,class: "form-control", placeholder: "Add extra comments..." %>
               </div><br>
                 <%= f.submit "Submit",class: "btn btn-primary signin-btn" %>
             <% end %>
@@ -55,3 +56,26 @@ $("#imgInp").change(function() {
   readURL(this);
 });
 </script>
+
+<style type="text/css">
+    .post-details{
+      flex-direction: initial;
+      height: auto;
+      display: block;
+      background: #f9f8f8;
+      padding: 15px;
+    }
+    .post-details img{
+      max-width:100%;
+    }
+    .product-details{
+      width: 100%;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+      margin-top: 20px;
+    }
+    .signin-btn{
+      background-color:#2fdcca !important;
+      border-color:#2fdcca !important;
+    }
+</style>

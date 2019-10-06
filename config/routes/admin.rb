@@ -7,7 +7,9 @@ resources :admin, :except => [:index] do
     post :balance_update
   end
   member do
-    post :update_status
+    # post :update_status
+    patch :update_status_reject
+    patch :update_status_approve
   end
 end
 root "admin#index"

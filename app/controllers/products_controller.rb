@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 	def new
 	end	
 
-	def create
+	def create1
 		@product = Product.new(product_params)
 		if @product.save
 			flash[:success] = "Product created successfully!"
@@ -19,12 +19,23 @@ class ProductsController < ApplicationController
 		end
 	end
 
+	def create
+    @product = Product.new(product_params)
+    if @product.save
+       @product.create_image(file: params[:product][:file])
+      redirect_to products_path, notice: 'Product Created Successfully.'
+    else
+      flash[:error] = @product.errors.full_messages.first.gsub("Body","")
+      render :new
+    end
+  end
+
 	def show
 		@product = Product.find_by_id(params[:id])
 	end
 	private
 	def product_params
-		params.require(:product).permit(:name, :image, :description)
+		params.require(:product).permit(:name, :description)
 	end
 
 	def get_products

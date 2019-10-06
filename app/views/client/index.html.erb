@@ -1,19 +1,51 @@
-<div class="home-slider">
+<div class="home-slider container">
   <% @products.each do |product| %>
   <a href="<%= product_path(product) %>" class="slide custom-post">
     <div class="slide">
-    <div class="slide-img setimg cover" style="background-image: url('<%= product&.image&.url %>')"></div>
+    <div class="slide-img setimg cover" style="background-image: url('<%= product&.image&.file_url %>')"></div>
         <div class="slide-content container">
             <div class="slide-text" style="margin-left: 50px">
-                <h1>
+                <h2>
                     <%= product&.name%>
-                </h1>
+                </h2>
             </div>
         </div>
     </div>
-    </a>
+  </a>
     <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
     $(document).on("turbolinks:load",function(){
@@ -705,15 +737,20 @@ a.yellow-text:hover{
 .home-slider {
     position: relative;
     overflow: hidden;
+    margin-top:20px;
 }
 .home-slider.slick-initialized .slick-slide {
     display: flex;
     align-items: center;
     outline: none !important;
+    max-height:500px;
 }
-.slick-slider .slick-track, .slick-slider .slick-list, .slick-slide {
-    height: 100%;
+
+.home-slider.slick-initialized .slick-slide.slick-active h1{
+    text-decoration: none!important;
 }
+
+
 .slide-content {
     color: #fff;
 }

@@ -50,18 +50,19 @@ class AdminController < ApplicationController
     	end
  end
 
-def update_status
-	order =	Order.find(params[:format])
-	if order.status == "Approve"
-		order.update(status: "Reject")
-		flash[:success] = "Order status changed succesfully"
-	elsif order.status == "Reject"
+def update_status_approve
+	order =	Order.find(params[:id])
 		order.update(status: "Approve")
 		flash[:success] = "Order status changed succesfully"
-	else
-		flash[:error] = "Order not found!"
-	end
 	redirect_to orders_path
+end
+
+def update_status_reject
+ order =	Order.find(params[:id])
+ order.update(status: "Reject")
+ flash[:success] = "Order status changed succesfully"
+ redirect_to orders_path
+
 end
 
 def edit

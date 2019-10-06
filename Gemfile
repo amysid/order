@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.8'
 # gem 'redis', '~> 4.0'
 gem 'alertifyjs-rails', '~> 1.11', '>= 1.11.1'
 # Use ActiveModel has_secure_password
+gem 'ckeditor'
+
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'

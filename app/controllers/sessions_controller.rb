@@ -26,14 +26,8 @@ class SessionsController < ApplicationController
   def login
     @user = User.find_by(email: params[:user][:email].downcase)
     if @user.present?&&@user.blocked!=1
-      #if user_to_root.split('/').length.eql?(3) && @user.role.eql?("Employee")
         login_method
-      # elsif user_to_root.split('/').length.eql?(4) && !@user.role.eql?("Employee")
-      #   login_method
-      # else
-      #   flash[:error] = "Invalid email or password!!"
-      #   redirect_to user_to_root
-      # end
+      
     else
         flash[:error] = "Invalid email or password!!"
         redirect_to user_to_root
@@ -186,7 +180,7 @@ end
   end
 
   def client_params
-    params.require(:user).permit(:name,:email,:role,:password)
+    params.require(:user).permit(:user_name,:email,:role,:password)
   end
 
   def verify_otp_session

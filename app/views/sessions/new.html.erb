@@ -6,11 +6,11 @@
                     <div class="col-md-6">
                         <div class="blue-box">
                             <div class="mwaloni">
-                                <h4>Mwaloni</h4>
-                                <p>Intelligent Systems</p>
+                                <h4>PrintAny</h4>
+                                <!-- <p>Intelligent Systems</p> -->
                             </div>
                             <div class="tree-img">
-                                <img src="assets/Layer 1.png">
+                                <img src="/assets/mainLogoAR.jpg">
                             </div>
                         </div>
                     </div>
@@ -34,15 +34,15 @@
                             </div>
                             <ul class="button-forget-list mt-3">
                                 <li>
-                                    <!-- <button type="submit" class="btn btn-primary signin-btn">Sign in</button> -->
-                                    <%= f.submit "Sign in",class: "btn btn-primary signin-btn" %>
+                                    <%= f.submit "Sign in",class: "nav-link btn btn-outline-dark" %>
                                 </li>
                                 <li>
-                                    <!-- <span class="gray-txt">Forgot password?</span> -->
                                     <span class="gray-txt">
                                         <div>
-                                        <%= link_to 'Forgot Password', req_password_path%></div>
-                                        <div><%= link_to 'Sign Up', sessions_signup_path%></div>
+                                        <a class="nav-link btn btn-outline-dark" href="<%= sessions_signup_path %>">Sign Up</a>
+                    
+                                        </div>
+                                    
 
                                 </li>
                             </ul>

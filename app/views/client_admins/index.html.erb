@@ -1,295 +1,52 @@
-<body>
   <div class="wrapper">
     <section class="custom-wrap">
       <div class="container">
         <div class="Dashboard-section">
-          <div class="black-heading">
-            <h4>Dashboard</h4>
-          </div>
-
-          <div class="row">
-
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <div class="white-card">
-                <p class="gray-txt mb-5">
-                  Current Balance
-                </p>
-                <ul class="list-none d-flex">
-                  <li class="gray-txt">ksh</li>
-                  <li class="h2">
-                    <%= @balance %>
-                  </li>
-                </ul>
-                <div class="mb-3">
-                  <button class="green-btn">
-                    Fund Wallet<i class="fa fa-arrow-right arrow-btn "></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <div class="white-card">
-                <p class="gray-txt mb-5">
-                  Unallocated Balance
-                </p>
-                <ul class="list-none d-flex">
-                  <li class="gray-txt">ksh</li>
-                  <li>
-                    <h2>1,040,055</h2>
-                  </li>
-                </ul>
-                <div class="mb-3">
-                  <button class="green-btn">
-                  Manage Wallet<i class="fa fa-arrow-right arrow-btn "></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <% if params[:controller]=="admin" %>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <div class="white-card">
-                <p class="gray-txt mb-5">
-                  Client Accounts
-                </p>
-                <ul class="list-none d-flex">
-                  <li class="gray-txt">ksh</li>
-                  <li class="h2">
-                    <%= @client_accounts %>
-                  </li>
-                </ul>
-                <div class="mb-3">
-                  <a href="/admin/new">
-                  <button class="red-btn">
-                    Create Client<i class="fa fa-arrow-right arrow-btn "></i>
-                  </button>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <% end %>
-            <% if params[:controller]=="admin" %>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <div class="white-card">
-                <p class="gray-txt mb-5">
-                  User Wallets
-                </p>
-                <ul class="list-none d-flex">
-                  <li class="gray-txt">ksh</li>
-                  <li class="h2">
-                    <%= @wallets %>
-                  </li>
-                </ul>
-                <div class="mb-3">
-                  <a href="/admin/new">
-                  <button class="blue-btn">
-                    Create Wallet<i class="fa fa-arrow-right arrow-btn "></i>
-                  </button>
-                  </a>
-                  <%#= button_to "Create Wallet",new_admin_path , :method => "get",class: "blue-btn"  %>
-                </div>
-              </div>
-            </div>
-            <% end %>
-            <% if params[:controller]=="client"||params[:controller]=="employee" %>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <div class="white-card">
-                <p class="gray-txt">
-                  Send Money
-                </p>
-                <div class="send-border"></div>
-                <ul class="list-none d-flex mt-5">
-                  <li>
-                    <p class="dullgray-txt">Transfer money straightto a mobile money account.</p>
-                  </li>
-                </ul>
-                <div class="mb-3">
-                  <button class="red-btn ">
-                    Send Now<i class="fa fa-arrow-right arrow-btn "></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <% end %>
-            <% if params[:controller]=="employee" %>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <div class="white-card">
-                <p class="gray-txt">
-                  Airtime
-                </p>
-                <div class="send-border"></div>
-                <ul class="list-none d-flex mt-5">
-                  <li>
-                    <p class="dullgray-txt">Send airtime directly to a mobile number.</p>
-                  </li>
-                </ul>
-                <div class="mb-3">
-                  <button class="blue-btn">
-                    Send Now<i class="fa fa-arrow-right arrow-btn "></i>
-                  </button>
-
-                </div>
-              </div>
-            </div>
-            <% end %>
-            <% if params[:controller]=="client"||params[:controller]=="employee" %>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <div class="white-card">
-                <p class="gray-txt">
-                  Bank Transfer
-                </p>
-                <div class="send-border"></div>
-                <ul class="list-none d-flex mt-5">
-                  <li>
-                    <p class="dullgray-txt">Transfer money straight into a bank account.</p>
-                  </li>
-                </ul>
-                <div class="mb-3">
-                  <button class="blue-btn ">
-                   Transfer Now<i class="fa fa-arrow-right arrow-btn "></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <% end %>
-          </div>
           <div class="row mt-5 mb-5">
-            <div class="col-md-6">
-              <div class="big-white-card">
+            <div class="col-md-12">
+              <div class="">
                 <ul class="list-none d-flex j-space">
                   <li>
-                    <p class="gray-color">Expenditure</p>
-                  </li>
-                  <li>
-                    <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle weekly-drop drop-btn" type="button"
-                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Weekly
-                      </button>
-                      <div class="dropdown-menu cdrop-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item cdrop-item active" href="#">Sunday</a>
-                        <a class="dropdown-item cdrop-item" href="#">Monday</a>
-                        <a class="dropdown-item cdrop-item" href="#">Tuesday</a>
-                      </div>
-                    </div>
+                    <p class="black-bold-color">Approved Orders</p>
                   </li>
                 </ul>
-                <ul class="list-none d-flex expenditure-list">
-                  <li class="blue-color">
-                    <p class="gray-txt">Incoming</p>
-                    <p>ksh <sub class="subheading">67,030</sub><img src="/assets/greenarrow.png"
-                        class="arrow-green"><span class="gray-txt">+5%</span></p>
-                  </li>
-                  <li class="gray-color">
-                    <p class="gray-txt">Outgoing</p>
-                    <p>ksh <sub class="subheading">25,992</sub><img src="/assets/redarrow.png" class="arrow-green"><span
-                        class="gray-txt">-10%</span></p>
+                <ul class="list-none d-flex right-data">
+                  <li class="search-box">
+                    <input type="text" class="form-control " placeholder="Search">
                   </li>
                 </ul>
-                <div class="graph-img">
-                  <img src="/assets/graph1.png">
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="big-white-card">
-                <ul class="list-none d-flex j-space">
-                  <li>
-                    <p class="gray-color">Activity Logs</p>
-                  </li>
-
-                </ul>
-                <div class="table-responsive activity-table-scroll">
-                  <table class="table activity-table">
+                <div class="table-responsive activity-table-scroll-big ">
+                  <table  class="table activity-table" id="sort">
                     <thead>
-                      <tr  class="table-fontsize">
+                      <tr class="table-fontsize">
+                        <th scope="col">id</th>
+                        <th scope="col">order Name</th>
+                        <th scope="col">Image/File</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Transaction Type</th>
-                        <th scope="col">Transaction Id</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Status</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <!-- <tr class="table-fontsize">
-                        <td>Description</td>
-                        <td>Transaction Type</td>
-                        <td>Transaction Id</td>
-                        <td>Amount</td>
-                        <td>Date</td>
-                        <td>Status</td>
-                      </tr> -->
-                      <tr class="table-fontsize ">
-                        <td>Farm Fees</td>
-                        <td>Send to Mobile Money</td>
-                        <td>CM12324</td>
-                        <td>4,500</td>
-                        <td>11:23am, Today</td>
-                        <td><button class="green-table-btn">Completed</button></td>
-                      </tr>
-                      <tr class="table-fontsize">
-                        <td>School Fees</td>
-                        <td>Utility Payment</td>
-                        <td>CM12320</td>
-                        <td>19,000</td>
-                        <td>09:05am, Today</td>
-                        <td><button class="green-table-btn">Completed</button></td>
-                      </tr>
-                      <tr class="table-fontsize">
-                        <td>Groceries</td>
-                        <td>Send to Mobile Money</td>
-                        <td>CM12384</td>
-                        <td>5,500</td>
-                        <td>06:02pm, 21/08/2019</td>
-                        <td><button class="red-table-btn">Pending</button></td>
-                      </tr>
-                      <tr class="table-fontsize">
-                        <td>Savings</td>
-                        <td>Send to Bank</td>
-                        <td>CM12002</td>
-                        <td>32,000</td>
-                        <td>03:41pm, 21/08/2019</td>
-                        <td><button class="green-table-btn">Completed</button></td>
-                      </tr>
-                      <!-- <tr class="table-fontsize">
-                        <td>Mediacal Expenses</td>
-                        <td>Utility Payment</td>
-                        <td>CM11048</td>
-                        <td>7,060</td>
-                        <td>01:05pm, 20/08/2019</td>
-                        <td><button class="green-table-btn">Completed</button></td>
-                      </tr>
-                      <tr class="table-fontsize">
-                        <td>Groceries</td>
-                        <td>Send to Mobile Money</td>
-                        <td>CM11001</td>
-                        <td>800</td>
-                        <td>10:02pm, 20/08/2019</td>
-                        <td><button class="green-table-btn">Completed</button></td>
-                      </tr>
-                      </tr>
-                      <tr class="table-fontsize">
-                        <td>School Fees</td>
-                        <td>Utility Payment</td>
-                        <td>CM10948</td>
-                        <td>8,900</td>
-                        <td>08:02am, 20/08/2019</td>
-                        <td><button class="green-table-btn">Completed</button></td>
-                      </tr> -->
+                      <% @orders.each_with_index do |order, i| %>
+                      <tr class="table-fontsize white-background">
+                        <td style="width: 5%"><%= i+1 %></td>
+                        <td style="width: 10%"><%= order&.product.name %></td>
+                        <%if order.file.format == "pdf"%>
+                          <td style="width: 30%">
+                            <a download="section name" href="<%= order&.file&.url%>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>PDF</a></td>
+                          <%else%>
+                          <td style="width: 30%"><img src="<%= order&.file&.url%>" alt=""></td>
+                          <%end%>
+                        <td style="width: 40%"><%= order&.comment %></td>
+                      <% end %>
                     </tbody>
                   </table>
                 </div>
+            
               </div>
             </div>
           </div>
+
         </div>
-      </div>
     </section>
 
-
-
   </div>
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-
-</body>
