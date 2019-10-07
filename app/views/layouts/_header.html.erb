@@ -6,9 +6,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <% if current_user&.role == "Admin" %>
+                <%if current_user&.role == "Admin" %>
                 <li class="nav-item">
-                    <a class="nav-link nblue-txt" href="<%=root_path%>">Dashboard</a>
+                    <a class="nav-link gray-txt" href="<%=root_path%>">Dashboard</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link gray-txt" href="/products">Product</a>
@@ -20,11 +20,7 @@
                     <a class="nav-link gray-txt" href="/orders/client_user">User</a>
                 </li>
                 <% end %>
-                <% if current_user&.role == "Agent" %>
-                <li class="nav-item">
-                    <a class="nav-link gray-txt" href="/orders/approve_order">Product Orders</a>
-                </li>
-                <%end%>
+               
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <ul class="welcome-kanera">
@@ -48,24 +44,21 @@
     </nav>
 </div>
 
-<script>
-// Add active class to the current button (highlight it)
-var header = document.getElementById("navbarSupportedContent");
-var btns = header.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("active");
-  current[0].className = current[0].className.replace(" active", "");
-  this.className += " active";
-  });
-}
-</script>
-
-<style>
-
-/* Style the active class, and buttons on mouse-over */
-.active, .btn:hover {
-  background-color: #666;
-  color: black;
+<style media="screen">
+    a.nav-link.gray-txt.c_active {
+    font-size: 14px;
+color: #4277bc !important;
+font-weight: normal;
 }
 </style>
+<script type="text/javascript">
+$(document).ready(function() {
+    url = window.location.href
+    var tree_menue = $('.navbar-nav li a').filter(function() {
+        return this.href == url;
+    });
+    tree_menue.addClass('c_active')
+
+
+})
+</script>

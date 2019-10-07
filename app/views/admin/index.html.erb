@@ -22,62 +22,64 @@
                     <h2><%= User.where.not(email: "admin@example.com").count%></h2>
                   </li>
                 </ul>
-                <div class="mb-3">
+               <!--  <div class="mb-3">
                   <button class="green-btn">
                     Total Users<i class="fa fa-arrow-right arrow-btn "></i>
                   </button>
-                </div>
+                </div> -->
               </div>
             </div>
-               <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
               <div class="white-card">
                 <p class="gray-txt mb-5">
-                  Total User
+                  Total Order
                 </p>
                 <ul class="list-none d-flex">
                   <li>
-                    <h2><%= User.all.count%></h2>
+                    <h2><%= Order.all.count%></h2>
                   </li>
                 </ul>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                   <button class="green-btn">
                     Total Users<i class="fa fa-arrow-right arrow-btn "></i>
                   </button>
-                </div>
+                </div> -->
               </div>
-            </div> 
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="white-card">
+                <p class="gray-txt mb-5">
+                  Pending Orders
+                </p>
+                <ul class="list-none d-flex">
+                  <li>
+                    <h2><%= Order.where(status: "Reject").count%></h2>
+                  </li>
+                </ul>
+               <!--  <div class="mb-3">
+                  <button class="green-btn">
+                    Total Users<i class="fa fa-arrow-right arrow-btn "></i>
+                  </button>
+                </div> -->
+              </div>
+            </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
               <div class="white-card">
                 <p class="gray-txt mb-5">
-                  Total User
+                  Active Orders
                 </p>
                 <ul class="list-none d-flex">
                   <li>
-                    <h2><%= User.all.count%></h2>
+                    <h2><%= Order.where(status: "Approve").count%></h2>
                   </li>
                 </ul>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                   <button class="green-btn">
                     Total Users<i class="fa fa-arrow-right arrow-btn "></i>
                   </button>
-                </div>
-              </div>
-            </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <div class="white-card">
-                <p class="gray-txt mb-5">
-                  Total User
-                </p>
-                <ul class="list-none d-flex">
-                  <li>
-                    <h2><%= User.all.count%></h2>
-                  </li>
-                </ul>
-                <div class="mb-3">
-                  <button class="green-btn">
-                    Total Users<i class="fa fa-arrow-right arrow-btn "></i>
-                  </button>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
