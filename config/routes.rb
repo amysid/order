@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get "logout" => "sessions#logout"
   get "my_profile" => "sessions#my_profile"
-  get "sessions/update_password"
+  get "sessions/signin"
   get "sessions/signup"
   post "sessions/register"
 
@@ -56,7 +56,9 @@ Rails.application.routes.draw do
     get "resend" => "sessions#resend"
     post "confirm_secondFa" => "sessions#confirm_secondFa"
     get "req_password" => "sessions#req_password"
-    root "sessions#new"
+    # root "sessions#new"
+    root "client#index"
+
   end
 
     resources :errors do

@@ -12,9 +12,9 @@
 
   <body>
     <% if current_user&.role == "Client" %>
-      <%= render "layouts/client_header" %>
+      <%#= render "layouts/client_header" %>
       <%= yield %>
-      <%= render "layouts/client_footer" %>
+      <%#= render "layouts/client_footer" %>
     <% elsif current_user&.role == "Admin" || current_user&.role == "Agent"%>
       <%= render "layouts/header" %>
       <%= yield %>

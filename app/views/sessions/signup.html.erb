@@ -1,3 +1,5 @@
+<%= render 'layouts/client_header' %>
+
 <div class="wrapper backgroundwrapper">
     <section class="custom-wrap custom-middle">
         <div class="container">
@@ -33,18 +35,12 @@
                                 <label for="exampleInputPassword1" class="gray-txt">Confirm Password</label>
                                 <%= f.password_field :confirm_password,class: "form-control form-input t-11","aria-describedby": "emailHelp",placeholder: "Confirm Password" %>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="exampleInputPassword1" class="gray-txt">Select User Type</label>
-                                <!-- <select name="user[role]" class="form-control form-control2 select_opt">
-                                  <option value="Client" selected="">Client</option>
-                                  <option value="Agent">Agent</option>
-                              </select> -->
-                               
+                                <label for="exampleInputPassword1" class="gray-txt">Select User Type</label> 
                               <%= f.select :role,options_for_select(['Client','Agent']), {:prompt => "Select User Type"},class: "form-control form-control2 select_opt",id: "abc12"%>
-
-
-
                             </div>
+
                              <ul class="button-forget-list mt-3">
                                 <li>
                                     <%= f.submit "Submit",class: "nav-link btn btn-outline-dark" %>
@@ -53,7 +49,7 @@
                                 <li>
                                     <span class="gray-txt">
                                         <div>
-                                        <a class="nav-link btn btn-outline-dark" href="<%#= sessions_path %>/">Log in</a>
+                                        <a class="nav-link btn btn-outline-dark" href="<%=sessions_signin_path%>">Log in</a>
                     
                                         </div>
                                     
@@ -69,6 +65,7 @@
         </div>
     </section>
 </div>
+<%= render 'layouts/client_footer' %>
 
 <script type="text/javascript">
 $(document).ready(function(){

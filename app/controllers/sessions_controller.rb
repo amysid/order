@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     @user = User.new(client_params)
     if @user.save
       flash[:success] = "Signup successfully."
-      redirect_to root_path
+      redirect_to sessions_signin_path
     else
       flash[:error] = "Something went wrong"
       render  :signup
@@ -117,23 +117,8 @@ def update_profile
   #redirect_to
 end
 
-def update_password
-#  binding.pry
-  if  current_user.authenticate(params[:old_password]) && params[:new_password] == params[:confirm_password]
-    current_user.update(password: params[:new_password])
-    #render :json => { :success => true  }
-    respond_to do |format|
-      format.js
-      format.json { render :json => { :success => "Password is incorrect!" }, :status => 200 }
-      format.html
-    end
-  else
-    # render :json => { :success => false  }
-    respond_to do |format|
-      format.json { render :json => { :error => "Password is incorrect!" }, :status => 422 }
-      format.html
-    end
-  end
+def signin
+  
 end
 
 def logout

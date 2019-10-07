@@ -33,7 +33,7 @@
                         <td style="width: 10%"><%= order&.product.name %></td>
                         <%if order.file.format == "pdf"%>
                           <td style="width: 30%">
-                            <a download="section name" href="<%= order&.file&.url%>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>PDF</a></td>
+                            <a download="section name" href="<%= order&.file&.url%>" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>PDF</a></td>
                           <%else%>
                           <td style="width: 30%"><img src="<%= order&.file&.url%>" alt=""></td>
                           <%end%>

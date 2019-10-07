@@ -13,16 +13,7 @@ class ProductsController < ApplicationController
 	def new
 	end	
 
-	# def create1
-	# 	@product = Product.new(product_params)
-	# 	if @product.save
-	# 		flash[:success] = "Product created successfully!"
-	# 		redirect_to products_path
-	# 	else
-	# 		flash[:error] = "Something went wrong!"
-	# 		redirect_to products_path
-	# 	end
-	# end
+	
 
 	def create
     @product = Product.new(product_params)
@@ -36,7 +27,12 @@ class ProductsController < ApplicationController
   end
 
 	def show
+		if current_user.present?
 		@product = Product.find_by_id(params[:id])
+	     else
+	    redirect_to sessions_signin_path
+	    flash[:error] = "Please Login First."
+	    end
 	end
 	private
 	def product_params

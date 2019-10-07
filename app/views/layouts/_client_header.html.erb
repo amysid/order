@@ -1,15 +1,29 @@
 <nav id="main-navbar" class="main-navbar navbar navbar-expand-lg">
     <div class="headerTop">
-      <a class="navbar-brand" href="<%= client_index_path%>">
+      <a class="navbar-brand" href="/">
         <img class="logo" src="/assets/mainLogoAR.jpg">
     </a>
+     <%if current_user.present?%>
       <ul class="navbar-nav align-items-center">
         <li class="nav-item user-item">
-
-        <a class="" href="<%= profile_path%>"><span><%= current_user&.name%></span> </a>
-    </li>
-        <li><a class="nav-link btn btn-outline-dark" href="<%= logout_path %>">Log Out</a></li>
+         <a class="" href="<%= profile_path%>"><span><%= current_user&.name%></span> </a>
+        </li>
+        <li>
+         <a class="nav-link btn btn-outline-dark" href="<%= logout_path %>">Log Out</a>
+        </li>
       </ul>
+      <%else%>
+       <ul class="navbar-nav align-items-center">
+        <li class="nav-item user-item">
+         <a class="nav-link btn btn-outline-dark" href="<%= sessions_signin_path%>">Login</a>
+         
+        </li>
+        <li>
+         <a class="nav-link btn btn-outline-dark" href="<%= sessions_signup_path%>">Sign Up</a>
+        </li>
+      </ul>
+      <%end%>
+      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
