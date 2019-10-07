@@ -1,0 +1,57 @@
+<%= render 'layouts/client_header' %>
+
+<div class="wrapper backgroundwrapper">
+    <section class="custom-wrap custom-middle">
+        <div class="container">
+            <div class=" middle-box">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="blue-box">
+                            <div class="mwaloni">
+                                <h4>PrintAny</h4>
+                                <!-- <p>Intelligent Systems</p> -->
+                            </div>
+                            <div class="tree-img">
+                                <img src="/assets/mainLogoAR.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="welcome-form ">
+                            <%= form_with scope: :user,url: login_path, id: "user_login_form" do |f| %>
+                            <div class="welcome-heading">
+                                <h4>
+                                    Welcome back
+                                </h4>
+                            </div>
+                            <div class="form-group mt-5">
+                                <label for="exampleInputEmail1" class="gray-txt">Your email</label>
+                                <%= f.text_field :email,class: "form-control form-input t-11" ,"aria-describedby": "emailHelp" ,placeholder: "Email Address" %>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" class="gray-txt">Password</label>
+                                <%= f.password_field :password,class: "form-control form-input t-11","aria-describedby": "emailHelp",placeholder: "Password" %>
+                            </div>
+                            <ul class="button-forget-list mt-3">
+                                <li>
+                                    <%= f.submit "Sign in",class: "nav-link btn btn-outline-dark" %>
+                                </li>
+                                <li>
+                                    <span class="gray-txt">
+                                        <div>
+                                        <a class="nav-link btn btn-outline-dark" href="<%= sessions_signup_path %>">Sign Up</a>
+                    
+                                        </div>
+                                    
+
+                                </li>
+                            </ul>
+                            <%end%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<%= render 'layouts/client_footer' %>
