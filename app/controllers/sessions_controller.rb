@@ -45,6 +45,8 @@ class SessionsController < ApplicationController
           redirect_to root_path
         end
   end
+
+
 def req_password
   if params[:forgot_password].present? && params[:forgot_password][:email].present?
    @user = User.find_by(email: params[:forgot_password][:email].downcase)
@@ -60,17 +62,15 @@ def req_password
 end
 
 end
-def resend
-  # unless session[:user].present?
-  #   flash[:error] = "Please login first"
-  #   redirect_to user_to_root
-  # end
 
-  User.send_otp_token(@user)
-  # flash[:notice] = "Email sent with token"
-  # return redirect_to secondFa_users_path if @user.role.eql?("Employee")
-  # redirect_to secondFA_path
-  render json: {status_code: 256}
+def resend
+ accept = "gmail.com"
+ email = params["user"]["email"].split('@')[1]
+    if email == accept
+      render json: true
+    else
+      render json: false
+    end
 end
 
 def secondFA

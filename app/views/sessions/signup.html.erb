@@ -86,8 +86,11 @@ $("#user_signup_form").validate({
         maxlength: 28
       },
       "user[email]":{
+       required: true,
+       remote: "/resend"
+      },
+      "user[role]":{
        required: true
-       // remote: "/web/users/check_email"
       },
       "user[password]":{
        required: true,
@@ -103,7 +106,7 @@ $("#user_signup_form").validate({
     }, 
     messages: { 
             "user[email]": {
-              remote: "Email has already been taken."
+              remote: "Only gmail.com is acceptable."
             },
             "user[password_confirmation]": {
               equalTo: "Confirm password didn't match."
