@@ -15,14 +15,19 @@
                   </li>
                 </ul>
                 <ul class="list-none d-flex right-data">
-               <li class="search-box">
-               	<a href="/products/new">
-               	<button class="green-btn-sqare create-btn-sqare">Create New Product</button>
-               </a>
-               </li>
-                  <li class="search-box">
-                    <input type="text" class="form-control " placeholder="Search">
-                  </li>
+                 <li class="search-box">
+                 	<a href="/products/new">
+                 	<button class="green-btn-sqare create-btn-sqare">Create New Product</button>
+                 </a>
+                 </li>
+
+
+                  <li class="nav-item">
+                    <%=form_tag "/products", method: :get,  class:"search-box" do  %>                     
+                    <input type="search" name="search" class="form-control" placeholder="Search Product by Name">
+                        <img src="/assets/search.png">
+                    <%end%>
+                </li>
                   
                 </ul>
                 <div class="table-responsive activity-table-scroll-big ">

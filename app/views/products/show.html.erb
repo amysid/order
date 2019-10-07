@@ -29,7 +29,7 @@
                 <h5>Select File: </h5><%#= f.file_field :image, class: "form-control", accept: "application/msword,text/plain, application/pdf,"%>
               </div> -->
               <div>
-                <h5>Remarks: </h5><%= f.text_area :comment,class: "form-control", placeholder: "Add extra comments..." %>
+                <h5>Remarks: </h5><%= f.text_area :description,class: "form-control", placeholder: "Add extra comments..." %>
               </div><br>
                 <%= f.submit "Submit",class: "btn btn-primary signin-btn" %>
             <% end %>

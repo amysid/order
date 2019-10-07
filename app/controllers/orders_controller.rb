@@ -2,8 +2,11 @@ class OrdersController < ApplicationController
 
 	def index
 		# binding.pry
-		@orders = Order.all
-        # @orders =  Order.where("product_name ILIKE ?", "%#{params[:search]}%").paginate(:page => params[:page], :per_page => 10)
+		# if params["search"].present?
+  #        @orders =  Order.where("product_name ILIKE ?", "%#{params[:search]}%").paginate(:page => params[:page], :per_page => 10)
+		# else
+		 @orders = Order.all
+		# end
 
 	end
 
@@ -22,7 +25,13 @@ class OrdersController < ApplicationController
 	# end
 
     def client_user
-   	@users = User.all
+    	if params["search"].present?
+		 @users =User.where("name ILIKE ?", "%#{params[:search]}%")
+		else	
+   	     @users = User.where.not(email: "admin@example.com")
+        end
+   	# @users = select * from users where email != "admin@example.com"
+
    end
 
 	def create
@@ -46,7 +55,7 @@ class OrdersController < ApplicationController
 
 	private
 	def order_params
-        params.require(:order).permit(:comment,:user_id)
+        params.require(:order).permit(:description,:user_id)
 		
 		# params.require(:order).permit(:image, :file, :comment, user_id: current_user.id)
 		# params.require(:order).permit(:image, :comment, :user_id)

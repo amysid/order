@@ -180,7 +180,7 @@ end
   end
 
   def client_params
-    params.require(:user).permit(:user_name,:email,:role,:password)
+    params.require(:user).permit(:name,:email,:role,:password)
   end
 
   def verify_otp_session

@@ -19,7 +19,7 @@
                             <%= form_with scope: :user,url: sessions_register_path, id: "user_signup_form" do |f| %>
                              <div class="form-group mt-5">
                                 <label for="exampleInputEmail1" class="gray-txt">Name</label>
-                                <%= f.text_field :user_name,class: "form-control form-input t-11" ,"aria-describedby": "emailHelp" ,placeholder: "Name" %>
+                                <%= f.text_field :name,class: "form-control form-input t-11" ,"aria-describedby": "emailHelp" ,placeholder: "Name" %>
                             </div>
                             <div class="form-group mt-5">
                                 <label for="exampleInputEmail1" class="gray-txt">Email</label>
@@ -42,8 +42,9 @@
                             </div>
                              <ul class="button-forget-list mt-3">
                                 <li>
-                                    <%= f.submit "Sign up",class: "nav-link btn btn-outline-dark" %>
+                                    <%= f.submit "Submit",class: "nav-link btn btn-outline-dark" %>
                                 </li>
+                              
                                 <li>
                                     <span class="gray-txt">
                                         <div>

@@ -16,9 +16,15 @@
                 </ul>
                 <ul class="list-none d-flex right-data">
                
-                  <li class="search-box">
+                 <!--  <li class="search-box">
                     <input type="text" class="form-control " placeholder="Search">
-                  </li>
+                  </li> -->
+                  <li class="nav-item">
+                    <%=form_tag "/orders/client_user", method: :get,  class:"search-box" do  %>                     
+                    <input type="search" name="search" class="form-control" placeholder="Search User by Name">
+                        <img src="/assets/search.png">
+                    <%end%>
+                </li>
                   
                 </ul>
                 <div class="table-responsive activity-table-scroll-big ">
@@ -28,15 +34,18 @@
                         <th scope="col">id</th>
                         <th scope="col">User Name</th>
                         <th scope="col">Email</th>
+                        <th scope="col">User Type</th>
+
                       </tr>
                     </thead>
                     <tbody>
                       <% @users.each_with_index do |user, i| %>
                       <tr class="table-fontsize white-background">
                         <td style="width: 5%"><%= i+1 %></td>
-                        <td style="width: 10%"><%= user&.user_name %></td>
+                        <td style="width: 10%"><%= user&.name %></td>
                         <td style="width: 30%"><%= user&.email %></td>
-                      
+                        <td style="width: 30%"><%= user&.role %></td>
+                        
 
                       <% end %>
                     </tbody>

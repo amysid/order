@@ -14,25 +14,15 @@
                     <p class="black-bold-color">Order Management</p>
                   </li>
                 </ul>
-               <!--  <ul class="list-none d-flex right-data">
                
-                  <li class="search-box">
-                    <input type="text" class="form-control " placeholder="Search">
-                  </li>
-                  
-                </ul> -->
 
-
-                 <ul class="list-none d-flex right-data">
+                <!--  <ul class="list-none d-flex right-data">
                 <li class="search-box">
-                      <!-- <form class="header-search"> -->
-                  <%=form_tag "/orders", method: :get,  class:"header-search" do  %>                     
-                    <input type="search" name="search" class="form-control" placeholder="Search Product">
-                        <!-- <img src="/assets/redarrow.png"> -->
-                    <%end%>
-                    <!-- </form> -->
+                  <%#=form_tag "/orders", method: :get,  class:"header-search" do  %>                     
+                    <input type="search" name="search" class="form-control" placeholder="Search Order">
+                    <%#end%>
                 </li>
-            </ul>
+               </ul> -->
 
                 <div class="table-responsive activity-table-scroll-big ">
                   <table  class="table activity-table" id="sort">
@@ -51,7 +41,7 @@
                       <% @orders.each_with_index do |order, i| %>
                       <tr class="table-fontsize white-background">
                         <td style="width: 5%"><%= i+1 %></td>
-                        <td style="width: 10%"><%= order&.user.user_name %></td>
+                        <td style="width: 10%"><%= order&.user.name %></td>
                         <td style="width: 10%"><%= order&.product.name %></td>
                         <%if order.file.format == "pdf"%>
                   <td style="width: 30%">
@@ -59,27 +49,19 @@
                   <%else%>
                   <td style="width: 30%"><img src="<%= order&.file&.url%>" alt=""></td>
                   <%end%>
-                        <!-- <td style="width: 30%"><img src="<%#= order.image.file_url %>"></td> -->
-                        <!-- <td style="width: 10%"><%#= order&.file&.file&.file&.split('/')&.last %></td> -->
-                        <td style="width: 30%"><%= order&.comment %></td>
-                       <!--  <td style="width: 15%">
-                          <a href="<%#= update_status_admin_path(order.id)%>">
-                          <%# if order&.status == "Approve" %>
-                            <button class="btn btn-danger btn-sm">Reject</button>
-                          <%# else %>
-                            <button class="btn btn-primary btn-sm">Approve</button>
-                          <%# end %>
-                        </td> -->
+                       
+                        <td style="width: 30%"><%= order&.description %></td>
+                       
                
                         <td style="width: 15%">
                       <% if order&.status == "Approve" %>
-                        <%#= link_to "Approved".html_safe, update_status_approve_admin_path(order), method: :patch, class: "btn btn-success",disabled: true, id: 'btnsubmit', title: "Reject", data: {confirm: "Are you sure you want to  Approve."} %>
+
                          <button class="btn btn-success">Approved</button>
 
                      <%elsif order&.status == "Reject"%>
                          <button class="btn btn-warning">Rejected</button>
                       
-                       <%#= link_to 'Rejected'.html_safe, update_status_reject_admin_path(order), method: :patch, class: "btn btn-warning", disabled: true, title: "Approve", data: {confirm: "Are you sure you  want to  Reject."} %>
+     
                        <%else%>
                        <%= link_to 'Reject'.html_safe, update_status_reject_admin_path(order), method: :patch, class: "btn btn-warning", title: "Approve", data: {confirm: "Are you sure you  want to  Reject."} %>
                         <%= link_to "Approve".html_safe, update_status_approve_admin_path(order), method: :patch, class: "btn btn-success", id: 'btnsubmit', title: "Reject", data: {confirm: "Are you sure you want to  Approve."} %>
