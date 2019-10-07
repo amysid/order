@@ -19,7 +19,7 @@
                 </p>
                 <ul class="list-none d-flex">
                   <li>
-                    <h2><%= User.all.count%></h2>
+                    <h2><%= User.where.not(email: "admin@example.com").count%></h2>
                   </li>
                 </ul>
                 <div class="mb-3">
