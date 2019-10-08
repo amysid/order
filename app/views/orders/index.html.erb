@@ -1,5 +1,3 @@
-<body>
-   
   <div class="wrapper">
     <section class="custom-wrap">
       <div class="container">
@@ -47,7 +45,9 @@
                   <td style="width: 30%">
                     <a download="section name" href="<%= order&.file&.url%>" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>PDF</a></td>
                   <%else%>
-                  <td style="width: 30%"><img src="<%= order&.file&.url%>" alt=""></td>
+                  <td style="width: 30%; height: 20%"  class="aaa">
+                    <!-- <img src="<%#= order&.file&.url%>" alt=""></td> -->
+                    <%= cl_image_tag(order.file, class: "img", :flags => :attachment) %>
                   <%end%>
                        
                         <td style="width: 30%"><%= order&.description %></td>
@@ -79,8 +79,38 @@
 
         </div>
     </section>
-
   </div>
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-</body>
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img class="modal-content-img normal" id="img01"><br />
+            </div>
+            <div class="modal-footer">
+                <a id="download" href="">
+                  <button type="submit" class="btn btn-outline-outline btn-sm">Download</button>
+                </a>
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('img.img').click(function(){
+      var img = $(this).attr('src');
+      var modalImg = document.getElementById("img01");
+      $('#imageModal').modal('show')
+      modalImg.src = img;
+      $('#download').attr('href', img);
+    });
+  });
+</script>
+
+<style type="text/css">
+  .aaa.img{
+      max-width: 200px;
+      max-height: 150px;
+  }
+</style>

@@ -1,71 +1,61 @@
-<body>
-   
-  <div class="wrapper">
-    <section class="custom-wrap">
-      <div class="container">
-        <div class="Dashboard-section">
-          
-
-          <div class="row mt-5 mb-5">
-            <div class="col-md-12">
-              <div class="">
-                <ul class="list-none d-flex j-space">
-                  <li>
-                    <p class="black-bold-color">Product Management</p>
-                  </li>
-                </ul>
-                <ul class="list-none d-flex right-data">
-                 <li class="search-box">
-                 	<a href="/products/new">
-                 	<button class="green-btn-sqare create-btn-sqare">Create New Product</button>
-                 </a>
-                 </li>
-
-
-                  <li class="nav-item">
-                    <%=form_tag "/products", method: :get,  class:"search-box" do  %>                     
-                    <input type="search" name="search" class="form-control" placeholder="Search Product by Name">
-                        <img src="/assets/search.png">
-                    <%end%>
+<div class="wrapper">
+  <section class="custom-wrap">
+    <div class="container">
+      <div class="Dashboard-section">
+        <div class="row mt-5 mb-5">
+          <div class="col-md-12">
+            <div class="">
+              <ul class="list-none d-flex j-space">
+                <li>
+                  <p class="black-bold-color">Product Management</p>
                 </li>
-                  
-                </ul>
-                <div class="table-responsive activity-table-scroll-big ">
-                  <table  class="table activity-table" id="sort">
-                    <thead>
-                      <tr class="table-fontsize">
-                        <th scope="col">id</th>
-                        <th scope="col">Product Name</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Description</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <% @products.each_with_index do |product, i| %>
-                      <tr class="table-fontsize white-background">
-                        <td style="width: 5%"><%= i+1 %></td>
-                        <td style="width: 20%"><%= product&.name %></td>
-                        <td style="width: 30%"><img src="<%= product.image.file_url %>" alt=""></td>
-                        <td><%= product&.description %></td>
-                        <td>
-                          <div class="elips">
-                            <i class="fa fa-ellipsis-v doted "></i>
-                          </div>
-                        </td>
-                      </tr>
-                      <% end %>
-                    </tbody>
-                  </table>
-                </div>
-            
+              </ul>
+              <ul class="list-none d-flex right-data">
+               <li class="search-box">
+               	<a href="/products/new">
+               	<button class="green-btn-sqare create-btn-sqare">Create New Product</button>
+               </a>
+               </li>
+                <li class="nav-item">
+                  <%=form_tag "/products", method: :get,  class:"search-box" do  %>                     
+                  <input type="search" name="search" class="form-control" placeholder="Search Product by Name">
+                      <img src="/assets/search.png">
+                  <%end%>
+              </li>
+              </ul>
+              <div class="table-responsive activity-table-scroll-big ">
+                <table  class="table activity-table" id="sort">
+                  <thead>
+                    <tr class="table-fontsize">
+                      <th scope="col">id</th>
+                      <th scope="col">Product Name</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @products.each_with_index do |product, i| %>
+                    <tr class="table-fontsize white-background">
+                      <td style="width: 5%"><%= i+1 %></td>
+                      <td style="width: 20%"><%= product&.name %></td>
+                      <td style="width: 30%"><img src="<%= product&.image&.file_url %>" style="max-width: 200px;max-height: 150px; "alt=""></td>
+                      <td><%= product&.description %></td>
+                      <td>
+                        <div class="elips">
+                          <i class="fa fa-ellipsis-v doted "></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
               </div>
+          
             </div>
           </div>
-
         </div>
-    </section>
 
-  </div>
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      </div>
+  </section>
 
-</body>
+</div>

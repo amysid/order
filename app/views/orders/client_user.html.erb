@@ -20,9 +20,17 @@
                     <input type="text" class="form-control " placeholder="Search">
                   </li> -->
                   <li class="nav-item">
-                    <%=form_tag "/orders/client_user", method: :get,  class:"search-box" do  %>                     
-                    <input type="search" name="search" class="form-control" placeholder="Search User by Name">
-                        <img src="/assets/search.png">
+                    <%=form_tag "/orders/client_user", method: :get,  class:"search-box" do  %> 
+                    <span>               
+                    <select class="form-control" name="user[blocked]">
+                      <option value="">Select User Status</option>
+                      <option value="Unblock">Active</option>
+                      <option value="Block">Block</option>
+                    </select>
+
+                    <input type="search" name="user[name]" class="form-control" placeholder="Search User by Name">
+                    <%= submit_tag "Search" %>
+                    </span>
                     <%end%>
                 </li>
                   
