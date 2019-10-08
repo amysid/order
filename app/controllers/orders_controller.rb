@@ -26,11 +26,11 @@ class OrdersController < ApplicationController
 
     def client_user
     	if params["user"].present?
-    		binding.pry
-    		if params["user"]["search"].present? 	
-				@users =User.where("name ILIKE ?", "%#{params[:user][:name]}%")
+    		# binding.pry
+    		if params["user"]["name"].present? 	
+				@users = User.where("name ILIKE ?", "%#{params[:user][:name]}%")
 			elsif params["user"]["blocked"].present?
-	   	    	@users = User.where("blocked ILIKE ?", "%#{params["user"]["blocked"]}%")
+	   	    	@users =  User.where.not(email: "admin@example.com").where(blocked: params[:user][:blocked])
 			end
         else
    	    	@users = User.where.not(email: "admin@example.com")

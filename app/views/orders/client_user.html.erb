@@ -41,14 +41,14 @@
                         <th scope="col">User Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">User Type</th>
-                        <th scope="col">Status>
+                        <th scope="col">Status</th>
 
                         <th scope="col">Action</th>
                         
                       </tr>
                     </thead>
                     <tbody>
-                      <% @users.each_with_index do |user, i| %>
+                      <% @users&.each_with_index do |user, i| %>
                       <tr class="table-fontsize white-background">
                         <td style="width: 5%"><%= i+1 %></td>
                         <td style="width: 10%"><%= user&.name %></td>
