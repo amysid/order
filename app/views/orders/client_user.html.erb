@@ -54,7 +54,7 @@
                         <td style="width: 10%"><%= user&.name %></td>
                         <td style="width: 30%"><%= user&.email %></td>
                         <td style="width: 30%"><%= user&.role %></td>
-                        <td style="width: 30%"><%= user&.blocked %></td>
+                        <td style="width: 30%"><%= user&.blocked.gsub('Unblock', 'Active') %></td>
                         
                         <td style="width: 15%">
                       <% if user&.blocked == "Block" %>

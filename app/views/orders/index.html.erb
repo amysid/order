@@ -14,13 +14,24 @@
                 </ul>
                
 
-                <!--  <ul class="list-none d-flex right-data">
-                <li class="search-box">
-                  <%#=form_tag "/orders", method: :get,  class:"header-search" do  %>                     
-                    <input type="search" name="search" class="form-control" placeholder="Search Order">
-                    <%#end%>
+                 <ul class="list-none d-flex right-data">
+               
+                
+                  <li class="nav-item">
+                    <%=form_tag "/orders", method: :get,  class:"search-box" do  %> 
+                    <span>               
+                    <select class="form-control" name="order[status]">
+                      <option value="">Select Orde by Status</option>
+                      <option value="Approve">Approve</option>
+                      <option value="Reject">Reject</option>
+                    </select>
+
+                    <%= submit_tag "Search" %>
+                    </span>
+                    <%end%>
                 </li>
-               </ul> -->
+                  
+                </ul>
 
                 <div class="table-responsive activity-table-scroll-big ">
                   <table  class="table activity-table" id="sort">

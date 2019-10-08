@@ -1,12 +1,11 @@
 class OrdersController < ApplicationController
 
 	def index
-		# binding.pry
-		# if params["search"].present?
-  #        @orders =  Order.where("product_name ILIKE ?", "%#{params[:search]}%").paginate(:page => params[:page], :per_page => 10)
-		# else
+		 if params["order"].present?
+           @orders =  Order.where(status: params["order"]["status"]).paginate(:page => params[:page], :per_page => 10)
+		else
 		 @orders = Order.all
-		# end
+		 end
 
 	end
 
