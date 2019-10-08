@@ -49,22 +49,22 @@
                     <tbody>
                       <% @orders.each_with_index do |order, i| %>
                       <tr class="table-fontsize white-background">
-                        <td style="width: 5%"><%= i+1 %></td>
-                        <td style="width: 10%"><%= order&.user.name %></td>
-                        <td style="width: 10%"><%= order&.product.name %></td>
+                        <td><%= i+1 %></td>
+                        <td><%= order&.user.name %></td>
+                        <td><%= order&.product.name %></td>
                         <%if order.file.format == "pdf"%>
-                  <td style="width: 30%">
+                  <td>
                     <a download="section name" href="<%= order&.file&.url%>" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>PDF</a></td>
                   <%else%>
-                  <td style="width: 30%; height: 20%"  class="aaa">
+                  <td>
                     <!-- <img src="<%#= order&.file&.url%>" alt=""></td> -->
                     <%= cl_image_tag(order.file, class: "img", :flags => :attachment) %>
                   <%end%>
                        
-                        <td style="width: 30%"><%= order&.description %></td>
+                        <td><p style="max-width: 300px"><%= order&.description %></p></td>
                        
                
-                        <td style="width: 15%">
+                        <td>
                       <% if order&.status == "Approve" %>
 
                          <button class="btn btn-success">Approved</button>
@@ -96,13 +96,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <img class="modal-content-img normal" id="img01"><br />
+                <img class="modal-content-img normal" id="img01" style="height:350px;max-width: 465px;"><br />
             </div>
             <div class="modal-footer">
                 <a id="download" href="">
-                  <button type="submit" class="btn btn-outline-outline btn-sm">Download</button>
+                  <button type="submit" class="btn btn-outline-primary btn-sm">Download</button>
                 </a>
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -118,10 +118,3 @@
     });
   });
 </script>
-
-<style type="text/css">
-  .aaa.img{
-      max-width: 200px;
-      max-height: 150px;
-  }
-</style>

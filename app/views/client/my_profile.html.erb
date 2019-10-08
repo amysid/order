@@ -28,15 +28,15 @@
               <tbody>
                 <% @orders.each_with_index do |order, i| %>
                 <tr class="table-fontsize white-background">
-                  <td style="width: 5%"><%= i+1 %></td>
-                  <td style="width: 20%"><%= order&.product.name %></td>
+                  <td><%= i+1 %></td>
+                  <td><%= order&.product.name %></td>
                   <%if order.file.format == "pdf"%>
-                  <td style="width: 30%">
+                  <td>
                     <a download="section name" href="<%= order&.file&.url%>"target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>PDF</a></td>
                   <%else%>
-                  <td style="width: 30%"><img src="<%= order&.file&.url%>" alt=""></td>
+                  <td><img src="<%= order&.file&.url%>" style="max-width: 200px;" alt=""></td>
                   <%end%>
-                  <td style="width: 40%"><%= order&.description %></td>
+                  <td><p style="max-width: 300px"><%= order&.description %></p></td>
                 </tr>
                 <% end %>
               </tbody>
@@ -49,7 +49,9 @@
     
     <style type="text/css">
       .user-profile  {
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+
     </style>
