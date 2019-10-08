@@ -50,6 +50,19 @@ class AdminController < ApplicationController
     	end
  end
 
+ def update_status_user
+  @user = User.find(params["id"])
+  if @user.blocked == "Unblock"
+  	@user.update(blocked: 1)
+  	flash[:success] = "User Blocked succesfully"
+  	redirect_to client_user_orders_path
+   else
+   	@user.update(blocked: 0)
+   	flash[:success] = "User UnBlocked succesfully"
+  	redirect_to client_user_orders_path
+ end
+end
+
 def update_status_approve
 	order =	Order.find(params[:id])
 		order.update(status: "Approve")

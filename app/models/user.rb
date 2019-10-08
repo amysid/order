@@ -5,7 +5,8 @@ class User < ApplicationRecord
 
   has_many :orders, dependent: :destroy
    enum role: ["Admin","Agent", "Client"]
-
+   enum blocked: ["Unblock","Block"]
+   
    validates :email, presence: true , uniqueness: {case_sensitive: false}
    # validates :user_name,presence: true , uniqueness: {case_sensitive: false}
 	 
