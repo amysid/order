@@ -1,2 +1,13 @@
 @import "bootstrap-sprockets";
 // @import "bootstrap";
+// 
+
+      td {
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: normal;
+      }
+
+        img.img{
+      max-width: 200px;
+  }

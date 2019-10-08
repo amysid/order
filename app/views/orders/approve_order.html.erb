@@ -29,22 +29,24 @@
                     <tbody>
                       <% @orders.each_with_index do |order, i| %>
                       <tr class="table-fontsize white-background">
-                        <td style="width: 5%"><%= i+1 %></td>
-                        <td style="width: 10%"><%= order&.product.name %></td>
+                        <td><%= i+1 %></td>
+                        <td><%= order&.product.name %></td>
                         <%if order.file.format == "pdf"%>
-                          <td style="width: 30%">
+                          <td>
                             <a download="section name" href="<%= order&.file&.url%>" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>PDF</a></td>
                           <%else%>
-                          <td style="width: 30%"><img src="<%= order&.file&.url%>" alt=""></td>
+                          <td>
+                            <%= cl_image_tag(order&.file, class: "img", :flags => :attachment) %>
+                        <!-- <img src="<%#= order&.file&.url%>" alt=""></td> -->
                           <%end%>
-                    <!--     <td style="width: 30%"><img src="<%#= order.image.file_url %>"></td>
-                        <td style="width: 30%">
+                    <!--     <td><img src="<%#= order.image.file_url %>"></td>
+                        <td>
                           <%#= order&.file&.file&.file&.split('/')&.last() %> <br>
                           <a href="<%#= order&.file %>">
                             <button class="btn btn-outline-primary btn-sm">Download</button> 
                           </a>
                         </td> -->
-                        <td style="width: 40%"><%= order&.description %></td>
+                        <td><p style="max-width: 300px"><%= order&.description %></p></td>
                       <% end %>
                     </tbody>
                   </table>
@@ -58,3 +60,30 @@
     </section>
 
   </div>
+
+  <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img class="modal-content-img normal" id="img01" style="height:350px;"><br />
+            </div>
+            <div class="modal-footer">
+                <a id="download" href="">
+                  <button type="submit" class="btn btn-outline-primary btn-sm">Download</button>
+                </a>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('img.img').click(function(){
+      var img = $(this).attr('src');
+      var modalImg = document.getElementById("img01");
+      $('#imageModal').modal('show')
+      modalImg.src = img;
+      $('#download').attr('href', img);
+    });
+  });
+</script>
