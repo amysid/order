@@ -16,9 +16,7 @@
                 </ul>
                 <ul class="list-none d-flex right-data">
                
-                 <!--  <li class="search-box">
-                    <input type="text" class="form-control " placeholder="Search">
-                  </li> -->
+                
                   <li class="nav-item">
                     <%=form_tag "/orders/client_user", method: :get,  class:"search-box" do  %>                     
                     <input type="search" name="search" class="form-control" placeholder="Search User by Name">
@@ -35,7 +33,10 @@
                         <th scope="col">User Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">User Type</th>
+                        <th scope="col">Status>
 
+                        <th scope="col">Action</th>
+                        
                       </tr>
                     </thead>
                     <tbody>
@@ -45,7 +46,18 @@
                         <td style="width: 10%"><%= user&.name %></td>
                         <td style="width: 30%"><%= user&.email %></td>
                         <td style="width: 30%"><%= user&.role %></td>
+                        <td style="width: 30%"><%= user&.blocked %></td>
                         
+                        <td style="width: 15%">
+                      <% if user&.blocked == "Block" %>
+
+                       <%= link_to 'UnBlock'.html_safe, update_status_user_admin_path(user), method: :patch, class: "btn btn-warning", title: "UnBlock", data: {confirm: "Are you sure you  want to  UnBlock."} %>
+     
+                       <%else%>
+                        <%= link_to "Block".html_safe, update_status_user_admin_path(user), method: :patch, class: "btn btn-success", id: 'btnsubmit', title: "Block", data: {confirm: "Are you sure you want to  Block."} %>
+                         <%end%>
+                       </td>
+
 
                       <% end %>
                     </tbody>
