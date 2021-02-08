@@ -10,7 +10,7 @@ gem 'pg', '~> 1.1', '>= 1.1.4'
 # gem 'sqlite3','~> 1.3.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.12'
-gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'carrierwave', '~> 1.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0', '>= 5.0.7'
 # Use Uglifier as compressor for JavaScript assets
